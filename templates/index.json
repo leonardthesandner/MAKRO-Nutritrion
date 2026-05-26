@@ -1,23 +1,5 @@
 {
   "sections": {
-    "announcement": {
-      "type": "announcement-bar",
-      "blocks": {
-        "announcement-1": {
-          "type": "announcement",
-          "settings": {
-            "text": "<strong>versandkostenfrei</strong> ab 60 €  ·  made in bavaria  ·  <strong>chargen-suche</strong>",
-            "link": ""
-          }
-        }
-      },
-      "block_order": ["announcement-1"],
-      "settings": {
-        "color_scheme": "scheme-4",
-        "auto_rotate": false,
-        "change_slides_speed": 5
-      }
-    },
     "makro-hero": {
       "type": "makro-hero",
       "settings": {
@@ -168,7 +150,6 @@
     }
   },
   "order": [
-    "announcement",
     "makro-hero",
     "makro-series",
     "makro-facts",
