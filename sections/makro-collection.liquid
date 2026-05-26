@@ -1,0 +1,179 @@
+<!-- Collection Hero -->
+<section class="mkr-col-hero">
+  <div class="mk-container">
+    <span class="mk-mono">{{ section.settings.label }}</span>
+    <div class="row">
+      <h1>{{ collection.title | default: section.settings.title }}</h1>
+      <p class="lead">{{ collection.description | default: section.settings.description }}</p>
+    </div>
+  </div>
+</section>
+
+<!-- Filter Bar -->
+<div class="mk-container">
+  <div class="mkr-filterbar">
+    <div class="chips">
+      <button class="chip is-on" data-filter="all">
+        alle <span class="ct">{{ collection.products_count }}</span>
+      </button>
+      {%- for tag in collection.all_tags -%}
+        <button class="chip" data-filter="{{ tag | handleize }}">
+          {{ tag }} <span class="ct">{{ collection.products | where: 'tags', tag | size }}</span>
+        </button>
+      {%- endfor -%}
+    </div>
+    <div class="count">{{ collection.products_count }} artikel</div>
+    <div class="sort">sortierung · <b>n° aufsteigend ↓</b></div>
+  </div>
+</div>
+
+<!-- Product Grid -->
+<section class="mkr-col-grid">
+  <div class="mk-container">
+    <div class="grid">
+      {%- for product in collection.products -%}
+        {%- liquid
+          assign numeral = product.metafields.makro.numeral | default: forloop.index
+          assign category = product.type | downcase
+          assign icon_type = product.metafields.makro.icon | default: 'wave'
+          assign is_soon = false
+          if product.tags contains 'coming-soon'
+            assign is_soon = true
+          endif
+          assign is_bundle = false
+          if product.tags contains 'bundle'
+            assign is_bundle = true
+          endif
+        -%}
+
+        <a class="mkr-cell{% if is_soon %} is-soon{% endif %}{% if is_bundle %} is-bundle{% endif %}"
+           href="{{ product.url }}">
+
+          <div class="top-meta">
+            <span><b>n°{{ numeral }}</b> · {{ category }}</span>
+            {%- if is_soon -%}
+              <span class="stock soon">○ in entwicklung</span>
+            {%- elsif product.available -%}
+              <span class="stock">● in stock</span>
+            {%- else -%}
+              <span class="stock soon">○ ausverkauft</span>
+            {%- endif -%}
+          </div>
+
+          <div class="face">
+            {%- if is_bundle -%}
+              <div class="numeral">
+                <span class="lab">{{ product.metafields.makro.bundle_label | default: '12 sachets · alle drei' }}</span>
+                <span class="three">
+                  <sup style="font-size:0.42em;vertical-align:0.55em;font-weight:800">n°</sup>1<small>·</small>2<small>·</small>3
+                </span>
+              </div>
+            {%- else -%}
+              <div class="numeral"><span class="sup">n°</span>{{ numeral }}</div>
+            {%- endif -%}
+
+            <div class="icon">
+              {%- case icon_type -%}
+                {%- when 'wave' -%}
+                  <svg viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round">
+                    <path d="M5 22 q 27.5 -18 55 0 t 55 0"/>
+                    <path d="M5 45 q 27.5 -18 55 0 t 55 0"/>
+                    <path d="M5 68 q 27.5 -18 55 0 t 55 0"/>
+                  </svg>
+                {%- when 'arc' -%}
+                  <svg viewBox="0 0 120 70" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round">
+                    <path d="M10 60 A 50 50 0 0 1 110 60"/>
+                    <path d="M25 60 A 35 35 0 0 1 95 60"/>
+                    <path d="M40 60 A 20 20 0 0 1 80 60"/>
+                  </svg>
+                {%- when 'lightning' -%}
+                  <svg viewBox="0 0 80 110" fill="currentColor">
+                    <path d="M44 0 L8 60 L32 60 L24 110 L66 44 L42 44 Z"/>
+                  </svg>
+                {%- else -%}
+                  <svg viewBox="0 0 120 90" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round">
+                    <path d="M5 45 q 27.5 -18 55 0 t 55 0"/>
+                  </svg>
+              {%- endcase -%}
+            </div>
+
+            <div class="name">{{ product.title | downcase }}</div>
+            <div class="desc">{{ product.metafields.makro.tagline | default: product.description | strip_html | truncate: 40 }}</div>
+          </div>
+
+          <div class="specs">
+            {%- assign spec1 = product.metafields.makro.spec1_label | default: 'g' -%}
+            {%- assign spec2 = product.metafields.makro.spec2_label | default: 'kcal' -%}
+            {%- assign spec3 = product.metafields.makro.spec3_label | default: 'net wt.' -%}
+            <div class="s">
+              <div class="k">{{ spec1 }}</div>
+              <div class="v">{{ product.metafields.makro.spec1_value | default: '—' }}</div>
+            </div>
+            <div class="s">
+              <div class="k">{{ spec2 }}</div>
+              <div class="v">{{ product.metafields.makro.spec2_value | default: '—' }}</div>
+            </div>
+            <div class="s">
+              <div class="k">{{ spec3 }}</div>
+              <div class="v">{{ product.metafields.makro.spec3_value | default: product.weight | weight_with_unit }}</div>
+            </div>
+          </div>
+
+          <div class="foot">
+            <div class="price">
+              €<b>{{ product.price | money_without_currency | remove: ' ' }}</b>
+              <span class="per">· {{ product.metafields.makro.price_unit | default: 'stück' }}</span>
+            </div>
+            {%- if is_soon -%}
+              <span class="cta">in entwicklung</span>
+            {%- else -%}
+              <span class="cta">in den warenkorb →</span>
+            {%- endif -%}
+          </div>
+        </a>
+      {%- endfor -%}
+    </div>
+
+    <!-- Index Strip -->
+    <div class="mkr-index-strip">
+      {%- for product in collection.products limit: 5 -%}
+        <div><b>{{ forloop.index | prepend: '0' | slice: -2, 2 }}</b> · {{ product.title | downcase }}</div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var chips = document.querySelectorAll('.mkr-filterbar .chip');
+    var cells = document.querySelectorAll('.mkr-cell');
+    chips.forEach(function(chip) {
+      chip.addEventListener('click', function() {
+        chips.forEach(function(c) { c.classList.remove('is-on'); });
+        chip.classList.add('is-on');
+        var filter = chip.dataset.filter;
+        cells.forEach(function(cell) {
+          if (filter === 'all') {
+            cell.style.display = '';
+          } else {
+            var tags = cell.dataset.tags || '';
+            cell.style.display = tags.indexOf(filter) > -1 ? '' : 'none';
+          }
+        });
+      });
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "makro. Collection",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Label", "default": "kollektion · vol. 01 · 2026" },
+    { "type": "text", "id": "title", "label": "Titel (Fallback)", "default": "Drei Gele. Für drei Phasen." },
+    { "type": "textarea", "id": "description", "label": "Beschreibung (Fallback)", "default": "Eine kleine Reihe. Wir bauen kein Sortiment, wir bauen eine Familie." }
+  ],
+  "presets": [{ "name": "makro. Collection" }]
+}
+{% endschema %}

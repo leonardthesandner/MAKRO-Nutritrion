@@ -1,0 +1,112 @@
+<link rel="stylesheet" href="{{ 'makro-site.css' | asset_url }}">
+
+{%- liquid
+  assign current_page = request.page_type
+  assign is_collection = false
+  assign is_product = false
+  if current_page == 'collection'
+    assign is_collection = true
+  elsif current_page == 'product'
+    assign is_product = true
+  endif
+-%}
+
+<!-- mobile nav -->
+<div class="mkr-mobile-nav" id="mkr-mnav">
+  <div class="mtop">
+    <a class="mkr-wordmark" href="{{ routes.root_url }}">makro<span class="dot">.</span></a>
+    <button class="mkr-icon-btn" onclick="document.getElementById('mkr-mnav').classList.remove('open')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 5 L19 19 M19 5 L5 19"/></svg>
+    </button>
+  </div>
+  <nav class="mlinks">
+    <a href="{{ routes.collections_url }}"><span>products</span><span class="num">01</span></a>
+    <a href="/#science"><span>science</span><span class="num">02</span></a>
+    <a href="/#journal"><span>journal</span><span class="num">03</span></a>
+    <a href="/pages/about"><span>about</span><span class="num">04</span></a>
+  </nav>
+  <div class="mfoot">
+    <span>DE / EN</span>
+    <a href="{{ routes.cart_url }}" style="color:inherit;text-decoration:none;">bag · {{ cart.item_count }}</a>
+  </div>
+</div>
+
+<header class="mkr-header">
+  <!-- strip -->
+  <div class="mkr-strip">
+    <div class="mk-container">
+      <div class="ticker">
+        <span><b>versandkostenfrei</b> ab 60&nbsp;€</span>
+        <span><b>made in bavaria</b> · since 2026</span>
+      </div>
+      <div class="right">
+        <a href="/pages/chargen-suche"><b>chargen-suche</b></a>
+        <a href="/pages/kontakt"><b>kontakt</b></a>
+        <a href="#"><b>DE / EN</b></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- main nav bar -->
+  <div class="mk-container">
+    <div class="mkr-nav-bar">
+      <a class="mkr-wordmark" href="{{ routes.root_url }}">makro<span class="dot">.</span></a>
+
+      <nav class="mkr-nav-main">
+        <a href="{{ routes.collections_url }}"{% if is_collection %} class="is-active"{% endif %}>products</a>
+        <a href="/#science">science</a>
+        <a href="/#journal">journal</a>
+        <a href="/pages/about">about</a>
+      </nav>
+
+      <div class="mkr-nav-right">
+        <span class="lang">EUR</span>
+        <a href="{{ routes.cart_url }}" class="mkr-bag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M5 8 h14 l-1.2 12 a1 1 0 0 1 -1 1 H7.2 a1 1 0 0 1 -1 -1 z"/>
+            <path d="M9 8 V6 a3 3 0 0 1 6 0 v2"/>
+          </svg>
+          bag · {{ cart.item_count }}
+        </a>
+        <button class="mkr-burger" onclick="document.getElementById('mkr-mnav').classList.add('open')">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- subline (context-specific) -->
+    <div class="mkr-subline">
+      {%- if is_collection -%}
+        <div class="crumbs">
+          <a href="{{ routes.root_url }}">index</a> /
+          <span class="current">products</span>
+        </div>
+        <div class="right">
+          <span>kollektion · vol. 01</span>
+          <b>{{ collection.products_count }} artikel</b>
+        </div>
+      {%- elsif is_product -%}
+        <div class="crumbs">
+          <a href="{{ routes.root_url }}">index</a> /
+          <a href="{{ routes.collections_url }}">products</a> /
+          <span class="current">{{ product.title | downcase }}</span>
+        </div>
+        <div class="right">
+          <span>lot {{ product.metafields.makro.lot | default: '—' }}</span>
+        </div>
+      {%- else -%}
+        <div class="crumbs"><span class="current">{{ page_title | downcase }}</span></div>
+        <div class="right"><span>makro. nutrition · DE</span></div>
+      {%- endif -%}
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "makro. Header",
+  "tag": "div",
+  "settings": [],
+  "presets": [{ "name": "makro. Header" }]
+}
+{% endschema %}
