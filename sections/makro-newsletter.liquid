@@ -1,0 +1,41 @@
+{% form 'customer', id: 'makro-newsletter-form' %}
+  <input type="hidden" name="contact[tags]" value="newsletter">
+  <div class="makro-newsletter">
+    <div>
+      <p class="makro-newsletter__label">{{ section.settings.label }}</p>
+      <h2 class="makro-newsletter__title">{{ section.settings.title }}</h2>
+    </div>
+    <div class="makro-newsletter__form">
+      <label for="makro-email" class="makro-newsletter__field-label">E-Mail</label>
+      <input
+        type="email"
+        name="contact[email]"
+        id="makro-email"
+        class="makro-newsletter__input"
+        placeholder="{{ section.settings.placeholder }}"
+        required
+        autocomplete="email"
+      >
+      <button type="submit" class="makro-newsletter__submit">
+        {{ section.settings.button_label }}
+      </button>
+      {%- if form.posted_successfully? -%}
+        <p class="mk-mono" style="margin-top:16px;color:var(--mk-positive);">eingetragen. willkommen.</p>
+      {%- endif -%}
+    </div>
+  </div>
+{% endform %}
+
+{% schema %}
+{
+  "name": "makro. Newsletter",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Label", "default": "labornachrichten · newsletter" },
+    { "type": "text", "id": "title", "label": "Titel", "default": "Notizen abonnieren." },
+    { "type": "text", "id": "placeholder", "label": "Placeholder", "default": "deine@email.de" },
+    { "type": "text", "id": "button_label", "label": "Button", "default": "eintragen" }
+  ],
+  "presets": [{ "name": "makro. Newsletter" }]
+}
+{% endschema %}

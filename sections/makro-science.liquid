@@ -1,0 +1,62 @@
+<div class="makro-science">
+  <div class="makro-science__left">
+    <div>
+      <p class="makro-science__label">{{ section.settings.label }}</p>
+      <h2 class="makro-science__title">{{ section.settings.title }}</h2>
+    </div>
+    <p class="makro-science__body">{{ section.settings.body }}</p>
+    <a href="{{ section.settings.link }}" class="makro-hero__cta" style="align-self:flex-start;">
+      {{ section.settings.link_label }}
+    </a>
+  </div>
+  <div class="makro-science__right">
+    <p class="makro-science__chart-label">{{ section.settings.chart_label }}</p>
+    <svg class="makro-science__curve" viewBox="0 0 600 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- Grid lines -->
+      <line x1="0" y1="180" x2="600" y2="180" stroke="#C5C2B8" stroke-width="1"/>
+      <line x1="0" y1="130" x2="600" y2="130" stroke="#D9D6CC" stroke-width="1"/>
+      <line x1="0" y1="80" x2="600" y2="80" stroke="#D9D6CC" stroke-width="1"/>
+      <line x1="0" y1="30" x2="600" y2="30" stroke="#D9D6CC" stroke-width="1"/>
+      <!-- Vertical grid -->
+      <line x1="150" y1="20" x2="150" y2="185" stroke="#E9E5DA" stroke-width="1"/>
+      <line x1="300" y1="20" x2="300" y2="185" stroke="#E9E5DA" stroke-width="1"/>
+      <line x1="450" y1="20" x2="450" y2="185" stroke="#E9E5DA" stroke-width="1"/>
+      <!-- Dextrose curve (fast spike) -->
+      <path d="M0,175 C40,170 60,30 100,28 C140,28 160,160 200,170 C240,178 280,178 600,178"
+            stroke="#A8A69D" stroke-width="1.5" stroke-dasharray="4 3" fill="none"/>
+      <!-- Isomaltulose curve (sustained) -->
+      <path d="M0,175 C60,172 100,120 160,70 C220,30 280,28 360,45 C440,62 500,110 600,155"
+            stroke="#0E0E0E" stroke-width="2" fill="none"/>
+      <!-- Labels -->
+      <text x="8" y="195" font-family="'JetBrains Mono', monospace" font-size="9" fill="#A8A69D" letter-spacing="1">0 min</text>
+      <text x="138" y="195" font-family="'JetBrains Mono', monospace" font-size="9" fill="#A8A69D" letter-spacing="1">30 min</text>
+      <text x="288" y="195" font-family="'JetBrains Mono', monospace" font-size="9" fill="#A8A69D" letter-spacing="1">60 min</text>
+      <text x="438" y="195" font-family="'JetBrains Mono', monospace" font-size="9" fill="#A8A69D" letter-spacing="1">90 min</text>
+      <!-- Legend -->
+      <line x1="8" y1="215" x2="28" y2="215" stroke="#0E0E0E" stroke-width="2"/>
+      <text x="32" y="218" font-family="'JetBrains Mono', monospace" font-size="9" fill="#5A5A56" letter-spacing="1">Isomaltulose</text>
+      <line x1="160" y1="215" x2="180" y2="215" stroke="#A8A69D" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <text x="184" y="218" font-family="'JetBrains Mono', monospace" font-size="9" fill="#5A5A56" letter-spacing="1">Dextrose</text>
+    </svg>
+    <div style="border-top:1px solid var(--mk-grey-200);padding-top:16px;">
+      <p class="mk-mono" style="color:var(--mk-grey-500);">{{ section.settings.chart_note }}</p>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "makro. Science",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Label", "default": "wissenschaft · rezeptur" },
+    { "type": "text", "id": "title", "label": "Titel", "default": "Zwei Kohlenhydrate. Eine Kurve." },
+    { "type": "textarea", "id": "body", "label": "Text", "default": "n°1 kombiniert Isomaltulose und Dextrose im optimalen Verhältnis. Dextrose liefert sofort verfügbare Energie. Isomaltulose hält den Blutzucker gleichmäßig — kein Crash, keine Spitze. Das Ergebnis: anhaltende Leistung über 90+ Minuten." },
+    { "type": "text", "id": "link_label", "label": "Link Label", "default": "zur Wissenschaft" },
+    { "type": "url", "id": "link", "label": "Link" },
+    { "type": "text", "id": "chart_label", "label": "Diagramm Label", "default": "glukose-aufnahme · absorption curve" },
+    { "type": "text", "id": "chart_note", "label": "Diagramm Notiz", "default": "schematische Darstellung · Lot 24F-A019 · interne Studie" }
+  ],
+  "presets": [{ "name": "makro. Science" }]
+}
+{% endschema %}

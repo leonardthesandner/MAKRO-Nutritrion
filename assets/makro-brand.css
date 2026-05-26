@@ -1,0 +1,813 @@
+/* ============================================================
+   makro. — Brand Stylesheet
+   Scientific · Minimal · Paper & Ink
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+:root {
+  /* — Paper & Ink — */
+  --mk-paper:           #F2EFE8;
+  --mk-paper-2:         #ECE8DF;
+  --mk-paper-3:         #E3DFD3;
+  --mk-ink:             #0E0E0E;
+  --mk-ink-soft:        #1F1F1E;
+
+  /* — Grey Scale — */
+  --mk-grey-900:        #2A2A28;
+  --mk-grey-700:        #5A5A56;
+  --mk-grey-500:        #8C8B85;
+  --mk-grey-400:        #A8A69D;
+  --mk-grey-300:        #C5C2B8;
+  --mk-grey-200:        #D9D6CC;
+  --mk-grey-100:        #E9E5DA;
+
+  /* — Category Accents — */
+  --mk-endurance:       #2E6F8E;
+  --mk-performance:     #C7A12B;
+  --mk-recovery:        #7A5BA0;
+  --mk-endurance-soft:  #DEE7EC;
+  --mk-performance-soft:#F1E9D0;
+  --mk-recovery-soft:   #E5DEEB;
+
+  /* — Status — */
+  --mk-positive:        #2F7A4E;
+  --mk-warning:         #C77A2B;
+  --mk-negative:        #B53A2B;
+
+  /* — Typography — */
+  --mk-font-sans:   'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --mk-font-mono:   'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+
+  /* — Hairlines — */
+  --mk-hairline:        1px solid var(--mk-ink);
+  --mk-hairline-soft:   1px solid var(--mk-grey-300);
+  --mk-hairline-hair:   1px solid var(--mk-grey-200);
+
+  /* — Motion — */
+  --mk-ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --mk-t-fast:      120ms;
+  --mk-t-base:      200ms;
+  --mk-t-slow:      400ms;
+}
+
+/* ============================================================
+   GLOBAL OVERRIDES
+   ============================================================ */
+
+body {
+  font-family: var(--mk-font-sans) !important;
+  background: var(--mk-paper) !important;
+  color: var(--mk-ink) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4 {
+  font-family: var(--mk-font-sans) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--mk-ink) !important;
+}
+
+/* Override Dawn color scheme defaults */
+.color-scheme-1,
+[style*="background: #FFFFFF"],
+[style*="background:#FFFFFF"] {
+  background: var(--mk-paper) !important;
+}
+
+/* Buttons */
+.button,
+.btn {
+  border-radius: 0 !important;
+  font-family: var(--mk-font-mono) !important;
+  font-size: 11px !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  font-weight: 400 !important;
+}
+
+.button--primary,
+.button:not(.button--secondary) {
+  background: var(--mk-ink) !important;
+  color: var(--mk-paper) !important;
+  border: var(--mk-hairline) !important;
+}
+
+.button--primary:hover {
+  background: var(--mk-grey-900) !important;
+}
+
+.button--secondary {
+  background: transparent !important;
+  color: var(--mk-ink) !important;
+  border: var(--mk-hairline) !important;
+}
+
+/* Links */
+a {
+  color: var(--mk-ink);
+  text-decoration: none;
+}
+
+/* Selection */
+::selection {
+  background: var(--mk-ink);
+  color: var(--mk-paper);
+}
+
+/* ============================================================
+   HEADER OVERRIDES
+   ============================================================ */
+
+.section-header {
+  background: var(--mk-paper) !important;
+  border-bottom: var(--mk-hairline) !important;
+}
+
+.header {
+  background: var(--mk-paper) !important;
+}
+
+.header__heading-link,
+.header__menu-item {
+  font-family: var(--mk-font-sans) !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0 !important;
+  color: var(--mk-ink) !important;
+}
+
+.header__heading {
+  font-family: var(--mk-font-sans) !important;
+  font-weight: 800 !important;
+  font-size: 22px !important;
+  letter-spacing: -0.04em !important;
+}
+
+/* ============================================================
+   MAKRO UTILITY CLASSES
+   ============================================================ */
+
+.mk-mono {
+  font-family: var(--mk-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mk-grey-400);
+}
+
+.mk-hairline { border: 0; border-top: var(--mk-hairline); margin: 0; }
+.mk-hairline-soft { border: 0; border-top: var(--mk-hairline-soft); margin: 0; }
+
+.mk-numeral {
+  font-family: var(--mk-font-sans);
+  font-weight: 800;
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+  color: var(--mk-ink);
+}
+
+/* ============================================================
+   TOP STRIP (announcement bar)
+   ============================================================ */
+
+.announcement-bar {
+  background: var(--mk-ink) !important;
+  color: var(--mk-paper) !important;
+  border-bottom: none !important;
+}
+
+.announcement-bar__message,
+.announcement-bar__link {
+  font-family: var(--mk-font-mono) !important;
+  font-size: 11px !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: rgba(242,239,232,0.75) !important;
+}
+
+.announcement-bar__message strong,
+.announcement-bar__link strong {
+  color: var(--mk-paper) !important;
+  font-weight: 400 !important;
+}
+
+/* ============================================================
+   PRODUCT CARDS
+   ============================================================ */
+
+.card-wrapper,
+.card {
+  border-radius: 0 !important;
+}
+
+.card--card {
+  border: var(--mk-hairline) !important;
+  box-shadow: none !important;
+  background: var(--mk-paper) !important;
+}
+
+.card__heading {
+  font-family: var(--mk-font-sans) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.price__regular,
+.price-item {
+  font-family: var(--mk-font-mono) !important;
+  letter-spacing: 0.04em !important;
+}
+
+/* ============================================================
+   FOOTER OVERRIDES
+   ============================================================ */
+
+.footer {
+  background: var(--mk-paper-2) !important;
+  border-top: var(--mk-hairline) !important;
+}
+
+.footer__content-top,
+.footer__content-bottom {
+  font-family: var(--mk-font-sans) !important;
+}
+
+.footer-block__heading {
+  font-family: var(--mk-font-mono) !important;
+  font-size: 11px !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--mk-grey-400) !important;
+  font-weight: 400 !important;
+}
+
+.footer__copyright {
+  font-family: var(--mk-font-mono) !important;
+  font-size: 11px !important;
+  letter-spacing: 0.08em !important;
+  color: var(--mk-grey-500) !important;
+}
+
+/* ============================================================
+   MAKRO HOMEPAGE SECTIONS
+   ============================================================ */
+
+/* — Hero — */
+.makro-hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: var(--mk-hairline);
+  background: var(--mk-paper);
+}
+
+.makro-hero__left {
+  padding: 80px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: var(--mk-hairline);
+}
+
+.makro-hero__right {
+  background: var(--mk-paper-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px;
+}
+
+.makro-hero__eyebrow {
+  font-family: var(--mk-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mk-grey-400);
+  margin-bottom: 24px;
+}
+
+.makro-hero__numeral {
+  font-family: var(--mk-font-sans);
+  font-weight: 800;
+  font-size: clamp(96px, 14vw, 160px);
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+  color: var(--mk-ink);
+  margin-bottom: 48px;
+}
+
+.makro-hero__numeral sup {
+  font-size: 0.42em;
+  vertical-align: 0.55em;
+  font-weight: 800;
+}
+
+.makro-hero__tagline {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--mk-ink);
+  margin-bottom: 48px;
+  max-width: 18ch;
+}
+
+.makro-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--mk-ink);
+  color: var(--mk-paper);
+  font-family: var(--mk-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 16px 32px;
+  text-decoration: none;
+  border: var(--mk-hairline);
+  transition: background var(--mk-t-fast) var(--mk-ease-out);
+}
+
+.makro-hero__cta:hover {
+  background: var(--mk-grey-900);
+  color: var(--mk-paper);
+}
+
+.makro-hero__img {
+  max-width: 340px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* — Series — */
+.makro-series {
+  border-bottom: var(--mk-hairline);
+  background: var(--mk-paper);
+}
+
+.makro-series__header {
+  padding: 48px 64px 0;
+  border-bottom: var(--mk-hairline-soft);
+  padding-bottom: 32px;
+}
+
+.makro-series__label {
+  font-family: var(--mk-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mk-grey-400);
+  margin-bottom: 12px;
+}
+
+.makro-series__title {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  color: var(--mk-ink);
+}
+
+.makro-series__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.makro-series__card {
+  padding: 48px;
+  border-right: var(--mk-hairline);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: background var(--mk-t-fast) var(--mk-ease-out);
+}
+
+.makro-series__card:last-child {
+  border-right: none;
+}
+
+.makro-series__card:hover {
+  background: var(--mk-paper-2);
+}
+
+.makro-series__card-numeral {
+  font-family: var(--mk-font-sans);
+  font-weight: 800;
+  font-size: 96px;
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+  color: var(--mk-ink);
+}
+
+.makro-series__card-numeral sup {
+  font-size: 0.38em;
+  vertical-align: 0.9em;
+  font-weight: 800;
+  color: var(--mk-grey-400);
+}
+
+.makro-series__card-name {
+  font-family: var(--mk-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mk-grey-400);
+}
+
+.makro-series__card-img {
+  width: 100%;
+  height: 240px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.makro-series__card-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 16px;
+  border-top: var(--mk-hairline-soft);
+}
+
+.makro-series__card-price {
+  font-family: var(--mk-font-mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--mk-ink);
+}
+
+.makro-series__card-soon {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* — Facts — */
+.makro-facts {
+  border-bottom: var(--mk-hairline);
+  background: var(--mk-paper);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.makro-facts__stat {
+  padding: 64px 48px;
+  border-right: var(--mk-hairline);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.makro-facts__stat:last-child {
+  border-right: none;
+}
+
+.makro-facts__num {
+  font-family: var(--mk-font-sans);
+  font-weight: 800;
+  font-size: clamp(48px, 6vw, 80px);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: var(--mk-ink);
+}
+
+.makro-facts__label {
+  font-family: var(--mk-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mk-grey-400);
+  margin-top: 8px;
+}
+
+.makro-facts__desc {
+  font-size: 14px;
+  color: var(--mk-grey-700);
+  line-height: 1.5;
+  max-width: 28ch;
+}
+
+/* — Science — */
+.makro-science {
+  border-bottom: var(--mk-hairline);
+  background: var(--mk-paper);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.makro-science__left {
+  padding: 80px 64px;
+  border-right: var(--mk-hairline);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.makro-science__right {
+  padding: 80px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background: var(--mk-paper-2);
+}
+
+.makro-science__label {
+  font-family: var(--mk-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mk-grey-400);
+}
+
+.makro-science__title {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  color: var(--mk-ink);
+}
+
+.makro-science__body {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--mk-grey-700);
+  max-width: 46ch;
+}
+
+.makro-science__chart-label {
+  font-family: var(--mk-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mk-grey-400);
+}
+
+.makro-science__curve {
+  width: 100%;
+  height: auto;
+}
+
+/* — Quote — */
+.makro-quote {
+  border-bottom: var(--mk-hairline);
+  background: var(--mk-paper);
+  padding: 96px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.makro-quote__text {
+  font-family: var(--mk-font-sans);
+  font-weight: 800;
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--mk-ink);
+}
+
+.makro-quote__attr {
+  font-family: var(--mk-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mk-grey-400);
+}
+
+/* — Journal — */
+.makro-journal {
+  border-bottom: var(--mk-hairline);
+  background: var(--mk-paper);
+}
+
+.makro-journal__header {
+  padding: 48px 64px;
+  border-bottom: var(--mk-hairline-soft);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.makro-journal__label {
+  font-family: var(--mk-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mk-grey-400);
+  margin-bottom: 8px;
+}
+
+.makro-journal__title {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--mk-ink);
+}
+
+.makro-journal__all {
+  font-family: var(--mk-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mk-grey-400);
+  text-decoration: none;
+  border-bottom: 1px solid var(--mk-grey-300);
+  padding-bottom: 2px;
+}
+
+.makro-journal__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.makro-journal__entry {
+  padding: 40px 64px;
+  border-right: var(--mk-hairline-soft);
+  border-bottom: var(--mk-hairline-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: background var(--mk-t-fast) var(--mk-ease-out);
+  border-left: 3px solid transparent;
+}
+
+.makro-journal__entry:hover {
+  background: var(--mk-paper-2);
+  border-left-color: var(--mk-ink);
+}
+
+.makro-journal__entry:nth-child(even) {
+  border-right: none;
+}
+
+.makro-journal__entry-date {
+  font-family: var(--mk-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mk-grey-400);
+}
+
+.makro-journal__entry-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  color: var(--mk-ink);
+}
+
+.makro-journal__entry-tag {
+  font-family: var(--mk-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mk-grey-500);
+}
+
+/* — Newsletter — */
+.makro-newsletter {
+  border-bottom: var(--mk-hairline);
+  background: var(--mk-paper-2);
+  padding: 96px 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.makro-newsletter__label {
+  font-family: var(--mk-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mk-grey-400);
+  margin-bottom: 16px;
+}
+
+.makro-newsletter__title {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  color: var(--mk-ink);
+}
+
+.makro-newsletter__form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.makro-newsletter__field-label {
+  font-family: var(--mk-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mk-grey-400);
+  margin-bottom: 8px;
+}
+
+.makro-newsletter__input {
+  background: transparent;
+  border: none;
+  border-bottom: var(--mk-hairline);
+  padding: 12px 0;
+  font-family: var(--mk-font-sans);
+  font-size: 16px;
+  color: var(--mk-ink);
+  outline: none;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.makro-newsletter__input::placeholder {
+  color: var(--mk-grey-300);
+}
+
+.makro-newsletter__submit {
+  background: var(--mk-ink);
+  color: var(--mk-paper);
+  font-family: var(--mk-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 16px 32px;
+  border: var(--mk-hairline);
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  transition: background var(--mk-t-fast) var(--mk-ease-out);
+}
+
+.makro-newsletter__submit:hover {
+  background: var(--mk-grey-900);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media screen and (max-width: 989px) {
+  .makro-hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .makro-hero__right { display: none; }
+  .makro-hero__left { padding: 64px 32px; }
+
+  .makro-series__grid {
+    grid-template-columns: 1fr;
+  }
+  .makro-series__card {
+    border-right: none;
+    border-bottom: var(--mk-hairline);
+    padding: 40px 32px;
+  }
+
+  .makro-facts {
+    grid-template-columns: 1fr;
+  }
+  .makro-facts__stat {
+    border-right: none;
+    border-bottom: var(--mk-hairline);
+    padding: 48px 32px;
+  }
+  .makro-facts__stat:last-child { border-bottom: none; }
+
+  .makro-science {
+    grid-template-columns: 1fr;
+  }
+  .makro-science__left,
+  .makro-science__right {
+    border-right: none;
+    padding: 64px 32px;
+  }
+  .makro-science__left { border-bottom: var(--mk-hairline); }
+
+  .makro-quote { padding: 64px 32px; }
+
+  .makro-journal__grid { grid-template-columns: 1fr; }
+  .makro-journal__entry { border-right: none; padding: 32px; }
+  .makro-journal__entry:nth-child(even) { border-right: none; }
+  .makro-journal__header { padding: 40px 32px; }
+
+  .makro-newsletter {
+    grid-template-columns: 1fr;
+    padding: 64px 32px;
+    gap: 40px;
+  }
+
+  .makro-series__header { padding: 40px 32px 24px; }
+}

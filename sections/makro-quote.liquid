@@ -1,0 +1,30 @@
+<div class="makro-quote">
+  <hr class="mk-hairline-soft" style="width:100%;">
+  <blockquote style="margin:0;">
+    <p class="makro-quote__text">„{{ section.settings.quote }}"</p>
+    <footer class="makro-quote__attr">— {{ section.settings.attribution }}</footer>
+  </blockquote>
+  <hr class="mk-hairline-soft" style="width:100%;">
+</div>
+
+{% schema %}
+{
+  "name": "makro. Quote",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "quote",
+      "label": "Zitat",
+      "default": "kein hype. einfach kohlenhydrate, die funktionieren."
+    },
+    {
+      "type": "text",
+      "id": "attribution",
+      "label": "Quelle",
+      "default": "K. M. · ultra runner · Garmisch"
+    }
+  ],
+  "presets": [{ "name": "makro. Quote" }]
+}
+{% endschema %}

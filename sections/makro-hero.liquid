@@ -1,0 +1,80 @@
+<div class="makro-hero">
+  <div class="makro-hero__left">
+    <div>
+      <p class="makro-hero__eyebrow">{{ section.settings.eyebrow }}</p>
+      <div class="makro-hero__numeral">
+        <sup>n°</sup>{{ section.settings.numeral }}
+      </div>
+    </div>
+    <div>
+      <h1 class="makro-hero__tagline">{{ section.settings.tagline }}</h1>
+      <a href="{{ section.settings.cta_link }}" class="makro-hero__cta">
+        {{ section.settings.cta_label }}
+      </a>
+    </div>
+  </div>
+  <div class="makro-hero__right">
+    {%- if section.settings.product_image != blank -%}
+      <img
+        class="makro-hero__img"
+        src="{{ section.settings.product_image | image_url: width: 700 }}"
+        alt="{{ section.settings.product_image.alt | escape }}"
+        width="700"
+        height="auto"
+        loading="eager"
+      >
+    {%- else -%}
+      <div style="width:200px;height:400px;border:1px solid #C5C2B8;background:var(--mk-paper);display:flex;align-items:center;justify-content:center;">
+        <span class="mk-mono">produkt-bild</span>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "makro. Hero",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "n°1 · endurance"
+    },
+    {
+      "type": "text",
+      "id": "numeral",
+      "label": "Numeral",
+      "default": "1"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "carbs to keep going."
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA Label",
+      "default": "shop now"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Produkt-Bild"
+    }
+  ],
+  "presets": [
+    {
+      "name": "makro. Hero"
+    }
+  ]
+}
+{% endschema %}

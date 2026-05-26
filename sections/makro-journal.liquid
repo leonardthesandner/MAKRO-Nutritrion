@@ -1,0 +1,55 @@
+<div class="makro-journal">
+  <div class="makro-journal__header">
+    <div>
+      <p class="makro-journal__label">{{ section.settings.label }}</p>
+      <h2 class="makro-journal__title">{{ section.settings.title }}</h2>
+    </div>
+    {%- if section.settings.blog_link != blank -%}
+      <a href="{{ section.settings.blog_link }}" class="makro-journal__all">alle einträge →</a>
+    {%- endif -%}
+  </div>
+  <div class="makro-journal__grid">
+    {%- for block in section.blocks -%}
+      <a href="{{ block.settings.link }}" class="makro-journal__entry" {{ block.shopify_attributes }}>
+        <span class="makro-journal__entry-date">{{ block.settings.date }} · {{ block.settings.tag }}</span>
+        <h3 class="makro-journal__entry-title">{{ block.settings.title }}</h3>
+      </a>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "makro. Journal",
+  "tag": "section",
+  "blocks": [
+    {
+      "type": "entry",
+      "name": "Eintrag",
+      "settings": [
+        { "type": "text", "id": "date", "label": "Datum", "default": "21.05.26" },
+        { "type": "text", "id": "tag", "label": "Tag", "default": "technical" },
+        { "type": "text", "id": "title", "label": "Titel", "default": "Aufnahmekinetik von Isomaltulose" },
+        { "type": "url", "id": "link", "label": "Link" }
+      ]
+    }
+  ],
+  "settings": [
+    { "type": "text", "id": "label", "label": "Label", "default": "laborbuch · journal" },
+    { "type": "text", "id": "title", "label": "Titel", "default": "Aus dem Laborbuch." },
+    { "type": "url", "id": "blog_link", "label": "Blog Link" }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "makro. Journal",
+      "blocks": [
+        { "type": "entry", "settings": { "date": "21.05.26", "tag": "technical", "title": "Aufnahmekinetik von Isomaltulose" } },
+        { "type": "entry", "settings": { "date": "02.05.26", "tag": "production", "title": "Charge 24F · Lot & MHD" } },
+        { "type": "entry", "settings": { "date": "14.04.26", "tag": "field", "title": "Feldtest Zugspitz Ultratrail" } },
+        { "type": "entry", "settings": { "date": "01.04.26", "tag": "plant", "title": "Werkstour Bayern" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

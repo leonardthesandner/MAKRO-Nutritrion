@@ -1,0 +1,85 @@
+<div class="makro-series">
+  <div class="makro-series__header">
+    <p class="makro-series__label">{{ section.settings.label }}</p>
+    <h2 class="makro-series__title">{{ section.settings.title }}</h2>
+  </div>
+  <div class="makro-series__grid">
+    {%- for block in section.blocks -%}
+      {%- if block.settings.coming_soon -%}
+        <div class="makro-series__card makro-series__card-soon" {{ block.shopify_attributes }}>
+      {%- else -%}
+        <a href="{{ block.settings.link }}" class="makro-series__card" {{ block.shopify_attributes }}>
+      {%- endif -%}
+          <div>
+            <div class="makro-series__card-numeral">
+              <sup>n°</sup>{{ block.settings.numeral }}
+            </div>
+            <p class="makro-series__card-name">{{ block.settings.name }}</p>
+          </div>
+          {%- if block.settings.image != blank -%}
+            <img
+              class="makro-series__card-img"
+              src="{{ block.settings.image | image_url: width: 600 }}"
+              alt="{{ block.settings.name | escape }}"
+              width="600"
+              height="300"
+              loading="lazy"
+            >
+          {%- else -%}
+            <div class="makro-series__card-img" style="border:1px solid var(--mk-grey-200);display:flex;align-items:center;justify-content:center;">
+              <span class="mk-mono">bild</span>
+            </div>
+          {%- endif -%}
+          <div class="makro-series__card-stat">
+            {%- unless block.settings.coming_soon -%}
+              <span class="mk-mono">{{ block.settings.stat }}</span>
+              <span class="makro-series__card-price mk-mono">{{ block.settings.price }}</span>
+            {%- else -%}
+              <span class="mk-mono">— bald verfügbar —</span>
+            {%- endunless -%}
+          </div>
+      {%- if block.settings.coming_soon -%}
+        </div>
+      {%- else -%}
+        </a>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "makro. Series",
+  "tag": "section",
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Produkt",
+      "settings": [
+        { "type": "text", "id": "numeral", "label": "Numeral", "default": "1" },
+        { "type": "text", "id": "name", "label": "Name", "default": "endurance" },
+        { "type": "image_picker", "id": "image", "label": "Bild" },
+        { "type": "text", "id": "stat", "label": "Stat", "default": "23 g carbs / gel" },
+        { "type": "text", "id": "price", "label": "Preis", "default": "ab 29,90 €" },
+        { "type": "url", "id": "link", "label": "Link" },
+        { "type": "checkbox", "id": "coming_soon", "label": "Coming Soon", "default": false }
+      ]
+    }
+  ],
+  "settings": [
+    { "type": "text", "id": "label", "label": "Label", "default": "produkt-reihe · 2026" },
+    { "type": "text", "id": "title", "label": "Titel", "default": "Die nummerierte Reihe." }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "makro. Series",
+      "blocks": [
+        { "type": "product", "settings": { "numeral": "1", "name": "endurance", "stat": "23 g carbs / gel", "price": "ab 29,90 €" } },
+        { "type": "product", "settings": { "numeral": "2", "name": "—", "coming_soon": true } },
+        { "type": "product", "settings": { "numeral": "3", "name": "caffeine", "stat": "75 mg caffeine", "price": "ab 32,90 €" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

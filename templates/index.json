@@ -1,210 +1,180 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "announcement": {
+      "type": "announcement-bar",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "announcement-1": {
+          "type": "announcement",
           "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "text": "<strong>versandkostenfrei</strong> ab 60 €  ·  made in bavaria  ·  <strong>chargen-suche</strong>",
+            "link": ""
           }
         }
       },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ],
+      "block_order": ["announcement-1"],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "color_scheme": "scheme-4",
+        "auto_rotate": false,
+        "change_slides_speed": 5
       }
     },
-    "rich_text": {
-      "type": "rich-text",
+    "makro-hero": {
+      "type": "makro-hero",
+      "settings": {
+        "eyebrow": "n°1 · endurance",
+        "numeral": "1",
+        "tagline": "carbs to keep going.",
+        "cta_label": "jetzt kaufen",
+        "cta_link": "/collections/all"
+      }
+    },
+    "makro-series": {
+      "type": "makro-series",
       "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Talk about your brand",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
-      ],
-      "settings": {
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
-      }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "show_view_all": false,
-        "swipe_on_mobile": false,
-        "image_ratio": "adapt",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "columns_mobile": "2",
-        "padding_top": 28,
-        "padding_bottom": 36
-      }
-    },
-    "collage": {
-      "type": "collage",
-      "blocks": {
-        "collection-0": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "product": {
+        "n1": {
           "type": "product",
           "settings": {
-            "product": "",
-            "second_image": false
+            "numeral": "1",
+            "name": "endurance",
+            "stat": "23 g carbs / gel",
+            "price": "ab 29,90 €",
+            "coming_soon": false
           }
         },
-        "collection-1": {
-          "type": "collection",
+        "n2": {
+          "type": "product",
           "settings": {
-            "collection": ""
+            "numeral": "2",
+            "name": "—",
+            "coming_soon": true
+          }
+        },
+        "n3": {
+          "type": "product",
+          "settings": {
+            "numeral": "3",
+            "name": "caffeine",
+            "stat": "75 mg koffein",
+            "price": "ab 32,90 €",
+            "coming_soon": false
           }
         }
       },
-      "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
-      ],
+      "block_order": ["n1", "n2", "n3"],
       "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "label": "produkt-reihe · 2026",
+        "title": "Die nummerierte Reihe."
       }
     },
-    "video": {
-      "type": "video",
-      "settings": {
-        "heading": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "heading_size": "h1",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
+    "makro-facts": {
+      "type": "makro-facts",
       "blocks": {
-        "column1": {
-          "type": "column",
+        "stat-1": {
+          "type": "stat",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "number": "23 g",
+            "label": "carbs / gel",
+            "description": "Isomaltulose & Dextrose für gleichmäßige, lang anhaltende Energie ohne Crash."
           }
         },
-        "column2": {
-          "type": "column",
+        "stat-2": {
+          "type": "stat",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "number": "391 kJ",
+            "label": "pro 100 g",
+            "description": "Optimale Energiedichte. Keine unnötigen Zusatzstoffe, keine Süßungsmittel."
           }
         },
-        "column3": {
-          "type": "column",
+        "stat-3": {
+          "type": "stat",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
+            "number": "+ 75 mg",
+            "label": "koffein · n°3",
+            "description": "Natürliches Koffein aus Grüntee-Extrakt für den entscheidenden Schub."
           }
         }
       },
-      "block_order": [
-        "column1",
-        "column2",
-        "column3"
-      ],
+      "block_order": ["stat-1", "stat-2", "stat-3"],
+      "settings": {}
+    },
+    "makro-science": {
+      "type": "makro-science",
       "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "third",
-        "image_ratio": "adapt",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "label": "wissenschaft · rezeptur",
+        "title": "Zwei Kohlenhydrate. Eine Kurve.",
+        "body": "n°1 kombiniert Isomaltulose und Dextrose im optimalen Verhältnis. Dextrose liefert sofort verfügbare Energie. Isomaltulose hält den Blutzucker gleichmäßig — kein Crash, keine Spitze. Das Ergebnis: anhaltende Leistung über 90+ Minuten.",
+        "link_label": "zur Wissenschaft",
+        "chart_label": "glukose-aufnahme · absorption curve",
+        "chart_note": "schematische Darstellung · Lot 24F-A019 · interne Studie"
+      }
+    },
+    "makro-quote": {
+      "type": "makro-quote",
+      "settings": {
+        "quote": "kein hype. einfach kohlenhydrate, die funktionieren.",
+        "attribution": "K. M. · ultra runner · Garmisch"
+      }
+    },
+    "makro-journal": {
+      "type": "makro-journal",
+      "blocks": {
+        "entry-1": {
+          "type": "entry",
+          "settings": {
+            "date": "21.05.26",
+            "tag": "technical",
+            "title": "Aufnahmekinetik von Isomaltulose"
+          }
+        },
+        "entry-2": {
+          "type": "entry",
+          "settings": {
+            "date": "02.05.26",
+            "tag": "production",
+            "title": "Charge 24F · Lot & MHD"
+          }
+        },
+        "entry-3": {
+          "type": "entry",
+          "settings": {
+            "date": "14.04.26",
+            "tag": "field",
+            "title": "Feldtest Zugspitz Ultratrail"
+          }
+        },
+        "entry-4": {
+          "type": "entry",
+          "settings": {
+            "date": "01.04.26",
+            "tag": "plant",
+            "title": "Werkstour Bayern"
+          }
+        }
+      },
+      "block_order": ["entry-1", "entry-2", "entry-3", "entry-4"],
+      "settings": {
+        "label": "laborbuch · journal",
+        "title": "Aus dem Laborbuch."
+      }
+    },
+    "makro-newsletter": {
+      "type": "makro-newsletter",
+      "settings": {
+        "label": "labornachrichten · newsletter",
+        "title": "Notizen abonnieren.",
+        "placeholder": "deine@email.de",
+        "button_label": "eintragen"
       }
     }
   },
   "order": [
-    "image_banner",
-    "rich_text",
-    "featured_collection",
-    "collage",
-    "video",
-    "multicolumn"
+    "announcement",
+    "makro-hero",
+    "makro-series",
+    "makro-facts",
+    "makro-science",
+    "makro-quote",
+    "makro-journal",
+    "makro-newsletter"
   ]
 }

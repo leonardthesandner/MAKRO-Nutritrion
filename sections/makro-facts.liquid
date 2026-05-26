@@ -1,0 +1,68 @@
+<div class="makro-facts">
+  {%- for block in section.blocks -%}
+    <div class="makro-facts__stat" {{ block.shopify_attributes }}>
+      <div class="makro-facts__num" data-counter="{{ block.settings.number }}">{{ block.settings.number }}</div>
+      <div class="makro-facts__label">{{ block.settings.label }}</div>
+      <p class="makro-facts__desc">{{ block.settings.description }}</p>
+    </div>
+  {%- endfor -%}
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const counters = document.querySelectorAll('.makro-facts__num[data-counter]');
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const raw = el.dataset.counter;
+          const num = parseFloat(raw.replace(/[^0-9.]/g, ''));
+          const prefix = raw.match(/^[^0-9]*/)[0];
+          const suffix = raw.replace(/^[^0-9]*[0-9.,]+/, '');
+          const duration = 1200;
+          const start = performance.now();
+          function update(now) {
+            const p = Math.min((now - start) / duration, 1);
+            const ease = 1 - Math.pow(1 - p, 3);
+            const cur = Math.round(num * ease * 10) / 10;
+            el.textContent = prefix + (Number.isInteger(num) ? Math.round(cur) : cur.toFixed(1)) + suffix;
+            if (p < 1) requestAnimationFrame(update);
+          }
+          requestAnimationFrame(update);
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(function(c) { observer.observe(c); });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "makro. Facts",
+  "tag": "section",
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat",
+      "settings": [
+        { "type": "text", "id": "number", "label": "Zahl", "default": "23 g" },
+        { "type": "text", "id": "label", "label": "Label", "default": "carbs / gel" },
+        { "type": "text", "id": "description", "label": "Beschreibung", "default": "" }
+      ]
+    }
+  ],
+  "settings": [],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "makro. Facts",
+      "blocks": [
+        { "type": "stat", "settings": { "number": "23 g", "label": "carbs / gel", "description": "Isomaltulose & Dextrose für gleichmäßige Energie." } },
+        { "type": "stat", "settings": { "number": "391 kJ", "label": "pro 100 g", "description": "Optimale Energiedichte ohne unnötige Zusätze." } },
+        { "type": "stat", "settings": { "number": "+ 75 mg", "label": "koffein · n°3", "description": "Natürliches Koffein für den entscheidenden Schub." } }
+      ]
+    }
+  ]
+}
+{% endschema %}
