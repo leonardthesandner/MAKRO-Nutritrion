@@ -85,18 +85,19 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px 32px;
+  padding: 32px 20px 24px;
   border-bottom: 1px solid rgba(14,14,14,0.08);
-  min-height: 55vw;
+  min-height: 76vw;
   position: relative;
 }
 
 .mkm-hero__img {
-  max-height: 52vw;
+  max-height: 70vw;
+  max-width: 220px;
   width: auto;
   object-fit: contain;
   mix-blend-mode: multiply;
-  filter: drop-shadow(0 12px 32px rgba(14,14,14,0.12));
+  filter: drop-shadow(0 16px 36px rgba(14,14,14,0.14));
 }
 
 .mkm-hero__eyebrow {
@@ -199,7 +200,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
     order: 1;
     padding: 64px 48px;
     width: 55%;
-    border-right: 1px solid #2A2A28;
+    border-right: 1px solid rgba(14,14,14,0.1);
     justify-content: space-between;
   }
   .mkm-hero__image-wrap {
@@ -961,7 +962,7 @@ a.mkm-card, a.mkm-hero__btn { display: flex; }
 .mkm-sci-card--hero .mkm-sci-card__desc { color: rgba(242,239,232,0.65); }
 
 /* ============================================================
-   SPECS — single column (no ingredient list)
+   SPECS — nutrition label + ingredient list
    ============================================================ */
 .mkm-specs__solo {
   padding: 64px 20px;
@@ -985,7 +986,67 @@ a.mkm-card, a.mkm-hero__btn { display: flex; }
   margin-top: 10px;
   color: var(--mk-ink);
 }
-.mkm-label-box { max-width: 440px; width: 100%; }
+.mkm-specs__right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 480px;
+  width: 100%;
+}
+.mkm-label-box { width: 100%; }
+
+/* Carb profile */
+.mkm-carb-profile {
+  border: 1px solid rgba(14,14,14,0.1);
+  padding: 20px;
+}
+.mkm-carb-profile .mkm-label { display: block; margin-bottom: 16px; }
+.mkm-carb-profile__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+.mkm-carb-profile__val {
+  font-family: var(--mk-font-sans);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--mk-ink);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.mkm-carb-profile__name {
+  font-family: var(--mk-font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--mk-ink);
+  margin-bottom: 2px;
+}
+.mkm-carb-profile__note {
+  font-family: var(--mk-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mk-grey-400);
+}
+
+/* Ingredient line */
+.mkm-ingr-line {
+  font-family: var(--mk-font-sans);
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--mk-grey-500);
+  padding-top: 4px;
+}
+.mkm-ingr-line strong {
+  font-family: var(--mk-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mk-ink);
+  font-weight: 400;
+  margin-right: 4px;
+}
 
 /* ============================================================
    FOOTER — 2-column override
