@@ -14,28 +14,51 @@
       </div>
     </div>
 
-    <!-- 2. Produktbild (mobile: zwischen Text und Buttons / desktop: rechte Spalte) -->
+    <!-- 2. Produktbilder Swiper -->
     <div class="mkm-hero__image-wrap">
-      {%- if section.settings.product_image != blank -%}
-        <img
-          class="mkm-hero__img"
-          src="{{ section.settings.product_image | image_url: width: 800 }}"
-          alt="makro. n°1 endurance"
-          width="400"
-          height="600"
-          loading="eager"
-          fetchpriority="high"
-        >
-      {%- else -%}
-        <img
-          class="mkm-hero__img"
-          src="{{ 'n3-front.png' | asset_url }}"
-          alt="makro. n°1 endurance"
-          width="400"
-          height="600"
-          loading="eager"
-        >
-      {%- endif -%}
+      <div class="mkm-swiper" id="mkm-hero-swiper">
+        <div class="mkm-swiper__track">
+          <div class="mkm-swiper__slide">
+            <img
+              class="mkm-hero__img"
+              src="{{ 'swipebild-1.png' | asset_url }}"
+              alt="makro. n°1 endurance – Ansicht 1"
+              loading="eager"
+              fetchpriority="high"
+            >
+          </div>
+          <div class="mkm-swiper__slide">
+            <img
+              class="mkm-hero__img"
+              src="{{ 'swipebild-2.png' | asset_url }}"
+              alt="makro. n°1 endurance – Ansicht 2"
+              loading="lazy"
+            >
+          </div>
+          <div class="mkm-swiper__slide">
+            <img
+              class="mkm-hero__img"
+              src="{{ 'swipebild-3.png' | asset_url }}"
+              alt="makro. n°1 endurance – Ansicht 3"
+              loading="lazy"
+            >
+          </div>
+          <div class="mkm-swiper__slide">
+            <img
+              class="mkm-hero__img"
+              src="{{ 'swipebild-4.png' | asset_url }}"
+              alt="makro. n°1 endurance – Ansicht 4"
+              loading="lazy"
+            >
+          </div>
+        </div>
+        <div class="mkm-swiper__dots" role="tablist" aria-label="Produktbilder">
+          <button class="mkm-swiper__dot is-active" data-index="0" aria-label="Bild 1"></button>
+          <button class="mkm-swiper__dot" data-index="1" aria-label="Bild 2"></button>
+          <button class="mkm-swiper__dot" data-index="2" aria-label="Bild 3"></button>
+          <button class="mkm-swiper__dot" data-index="3" aria-label="Bild 4"></button>
+        </div>
+      </div>
     </div>
 
     <!-- 3. Bottom: Specs-Leiste + CTA Buttons -->
@@ -69,12 +92,39 @@
   </div>
 </section>
 
+<script>
+(function() {
+  var swiper = document.getElementById('mkm-hero-swiper');
+  if (!swiper) return;
+  var track = swiper.querySelector('.mkm-swiper__track');
+  var dots  = swiper.querySelectorAll('.mkm-swiper__dot');
+  var current = 0;
+
+  function goTo(index) {
+    track.scrollTo({ left: track.offsetWidth * index, behavior: 'smooth' });
+  }
+
+  dots.forEach(function(dot) {
+    dot.addEventListener('click', function() {
+      goTo(parseInt(dot.dataset.index));
+    });
+  });
+
+  track.addEventListener('scroll', function() {
+    var idx = Math.round(track.scrollLeft / track.offsetWidth);
+    if (idx !== current) {
+      current = idx;
+      dots.forEach(function(d, i) { d.classList.toggle('is-active', i === current); });
+    }
+  }, { passive: true });
+})();
+</script>
+
 {% schema %}
 {
   "name": "mkm. Hero",
   "tag": "section",
   "settings": [
-    { "type": "image_picker", "id": "product_image", "label": "Produkt-Bild" },
     { "type": "text", "id": "title", "label": "Headline", "default": "endurance." },
     { "type": "text", "id": "desc", "label": "Beschreibung", "default": "Isomaltulose & Dextrose. 30 g Carbs pro Gel. Kein Crash. Kein Hype. Nur Energie, die hält." },
     { "type": "url", "id": "cta_link", "label": "CTA Link" },
