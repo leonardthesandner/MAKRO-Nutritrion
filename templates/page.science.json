@@ -3,14 +3,9 @@
     "science": {
       "type": "mkm-science",
       "settings": {}
-    },
-    "specs": {
-      "type": "mkm-specs",
-      "settings": {}
     }
   },
   "order": [
-    "science",
-    "specs"
+    "science"
   ]
 }
