@@ -941,3 +941,203 @@ a.mkm-card, a.mkm-hero__btn { display: flex; }
   color: var(--mk-grey-500);
 }
 .mkm-sci-card--hero .mkm-sci-card__desc { color: rgba(242,239,232,0.65); }
+
+/* ============================================================
+   SPECS — single column (no ingredient list)
+   ============================================================ */
+.mkm-specs__solo {
+  padding: 64px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+@media (min-width: 768px) {
+  .mkm-specs__solo {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 80px;
+    padding: 80px 40px;
+  }
+}
+.mkm-specs__head { flex-shrink: 0; }
+.mkm-specs__head .mkm-specs__title {
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-top: 10px;
+  color: var(--mk-ink);
+}
+.mkm-label-box { max-width: 440px; width: 100%; }
+
+/* ============================================================
+   FOOTER — 2-column override
+   ============================================================ */
+.mkr-footer-data--slim {
+  grid-template-columns: 1.6fr 1fr !important;
+}
+@media (max-width: 640px) {
+  .mkr-footer-data--slim { grid-template-columns: 1fr !important; }
+}
+
+/* ============================================================
+   LEGAL PAGES (AGB / Impressum / Versand / Kontakt)
+   ============================================================ */
+.mkm-page {
+  background: var(--mk-paper);
+  padding: 64px 0 96px;
+  min-height: 60vh;
+}
+
+.mkm-page__inner {
+  max-width: 800px;
+}
+
+.mkm-page__head {
+  margin-bottom: 56px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(14,14,14,0.12);
+}
+
+.mkm-page__title {
+  font-family: var(--mk-font-sans);
+  font-size: clamp(32px, 6vw, 56px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--mk-ink);
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+.mkm-page__meta {
+  font-family: var(--mk-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mk-grey-400);
+  margin-top: 16px;
+}
+
+/* Body text */
+.mkm-page__body h2 {
+  font-family: var(--mk-font-sans);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--mk-ink);
+  margin-top: 40px;
+  margin-bottom: 12px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(14,14,14,0.08);
+}
+
+.mkm-page__body h3 {
+  font-family: var(--mk-font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--mk-ink);
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.mkm-page__body p,
+.mkm-page__body li {
+  font-family: var(--mk-font-sans);
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--mk-grey-500);
+  margin-bottom: 12px;
+}
+
+.mkm-page__body ul {
+  padding-left: 20px;
+  margin-bottom: 12px;
+}
+
+.mkm-page__body li { margin-bottom: 6px; }
+
+.mkm-page__body a {
+  color: var(--mk-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Kontakt page layout */
+.mkm-kontakt-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+}
+@media (min-width: 640px) {
+  .mkm-kontakt-grid { grid-template-columns: 1fr 1.5fr; gap: 64px; }
+}
+
+.mkm-kontakt-info h2 {
+  font-size: 11px;
+  font-family: var(--mk-font-mono);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mk-grey-400);
+  border-top: 1px solid rgba(14,14,14,0.08);
+  padding-top: 12px;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+.mkm-kontakt-info h2:first-child { margin-top: 0; }
+
+/* Form */
+.mkm-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.mkm-input {
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(14,14,14,0.2);
+  padding: 14px 16px;
+  font-family: var(--mk-font-sans);
+  font-size: 15px;
+  color: var(--mk-ink);
+  outline: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  transition: border-color 150ms ease;
+}
+.mkm-input:focus { border-color: var(--mk-ink); }
+.mkm-input--textarea { resize: vertical; min-height: 140px; }
+
+.mkm-btn-submit {
+  background: var(--mk-ink);
+  color: var(--mk-paper);
+  font-family: var(--mk-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 16px 24px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: opacity 150ms ease;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+.mkm-btn-submit:hover { opacity: 0.8; }
+
+.mkm-form-success {
+  font-family: var(--mk-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mk-ink);
+  padding: 20px;
+  border: 1px solid rgba(14,14,14,0.15);
+}

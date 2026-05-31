@@ -1,0 +1,6 @@
+{
+  "sections": {
+    "main": { "type": "page-impressum", "settings": {} }
+  },
+  "order": ["main"]
+}

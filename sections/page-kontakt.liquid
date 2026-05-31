@@ -1,0 +1,71 @@
+<section class="mkm-page">
+  <div class="mkm-page__inner mkm-wrap">
+
+    <div class="mkm-page__head">
+      <span class="mkm-label">service · kontakt</span>
+      <h1 class="mkm-page__title">Kontakt</h1>
+      <p class="mkm-page__meta">Wir antworten in der Regel innerhalb von 24 Stunden.</p>
+    </div>
+
+    <div class="mkm-page__body mkm-page__body--kontakt">
+
+      <div class="mkm-kontakt-grid">
+
+        <div class="mkm-kontakt-info">
+          <h2>Anschrift</h2>
+          <p>
+            makro. nutrition<br>
+            Leonard Sandner<br>
+            Gerlichstraße 12b<br>
+            93049 Regensburg<br>
+            Deutschland
+          </p>
+
+          <h2>E-Mail</h2>
+          <p><a href="mailto:info@makro-nutrition.com">info@makro-nutrition.com</a></p>
+
+          <h2>Antwortzeit</h2>
+          <p>Mo – Fr · 24 h</p>
+        </div>
+
+        <div class="mkm-kontakt-form">
+          {% form 'contact', id: 'mkm-contact-form' %}
+            {%- if form.posted_successfully? -%}
+              <p class="mkm-form-success">✓ Nachricht erhalten. Wir melden uns.</p>
+            {%- else -%}
+              <div class="mkm-field">
+                <label for="ContactFormName" class="mkm-label mkm-label--ink">Name</label>
+                <input type="text" id="ContactFormName" name="contact[name]" autocomplete="name"
+                  class="mkm-input" value="{{ form.name }}" required>
+              </div>
+              <div class="mkm-field">
+                <label for="ContactFormEmail" class="mkm-label mkm-label--ink">E-Mail</label>
+                <input type="email" id="ContactFormEmail" name="contact[email]" autocomplete="email"
+                  class="mkm-input" value="{{ form.email }}" required>
+              </div>
+              <div class="mkm-field">
+                <label for="ContactFormMessage" class="mkm-label mkm-label--ink">Nachricht</label>
+                <textarea id="ContactFormMessage" name="contact[body]" rows="6"
+                  class="mkm-input mkm-input--textarea" required>{{ form.body }}</textarea>
+              </div>
+              <button type="submit" class="mkm-btn-submit">
+                <span>Absenden</span>
+                <span>→</span>
+              </button>
+            {%- endif -%}
+          {% endform %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "page · Kontakt",
+  "tag": "section",
+  "settings": [],
+  "presets": [{ "name": "page · Kontakt" }]
+}
+{% endschema %}

@@ -1,0 +1,6 @@
+{
+  "sections": {
+    "main": { "type": "page-agb", "settings": {} }
+  },
+  "order": ["main"]
+}

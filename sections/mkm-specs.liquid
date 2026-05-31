@@ -1,73 +1,52 @@
 <section class="mkm-specs">
-  <div class="mkm-specs__inner">
+  <div class="mkm-specs__solo mkm-wrap">
 
-    <!-- Left: Nutrition Label -->
-    <div class="mkm-specs__left">
+    <div class="mkm-specs__head">
       <span class="mkm-label">n°3 · nährwerte</span>
       <h2 class="mkm-specs__title">Was drinsteckt.</h2>
-
-      <div class="mkm-label-box">
-        <div class="mkm-label-box__head">
-          <h3>Nährwertangaben</h3>
-          <p>pro Portion (60 g Gel) · n°3 endurance</p>
-        </div>
-        <div class="mkm-label-box__row mkm-label-box__row--bold">
-          <span class="mkm-label-box__key">Kohlenhydrate</span>
-          <span class="mkm-label-box__val">30 g</span>
-        </div>
-        <div class="mkm-label-box__row">
-          <span class="mkm-label-box__key mkm-label-box__key--sub">davon Isomaltulose</span>
-          <span class="mkm-label-box__val">15 g</span>
-        </div>
-        <div class="mkm-label-box__row">
-          <span class="mkm-label-box__key mkm-label-box__key--sub">davon Dextrose</span>
-          <span class="mkm-label-box__val">8 g</span>
-        </div>
-        <div class="mkm-label-box__row">
-          <span class="mkm-label-box__key mkm-label-box__key--sub">davon Fructose</span>
-          <span class="mkm-label-box__val">7 g</span>
-        </div>
-        <div class="mkm-label-box__row mkm-label-box__row--bold">
-          <span class="mkm-label-box__key">Energie</span>
-          <span class="mkm-label-box__val">92 kcal</span>
-        </div>
-        <div class="mkm-label-box__row">
-          <span class="mkm-label-box__key">Protein</span>
-          <span class="mkm-label-box__val">0 g</span>
-        </div>
-        <div class="mkm-label-box__row">
-          <span class="mkm-label-box__key">Fett</span>
-          <span class="mkm-label-box__val">0 g</span>
-        </div>
-        <div class="mkm-label-box__row">
-          <span class="mkm-label-box__key">Natrium</span>
-          <span class="mkm-label-box__val">110 mg</span>
-        </div>
-        <div class="mkm-label-box__footer">
-          Net Wt. 60 g · Lot 24F-A019 · MHD 09/2027<br>
-          Hergestellt in Bayern · DE
-        </div>
-      </div>
     </div>
 
-    <!-- Right: Ingredient bars -->
-    <div class="mkm-specs__right">
-      <span class="mkm-label">zutaten · n°3 endurance</span>
-      <h2 class="mkm-specs__title" style="margin-top:10px;margin-bottom:28px;">13 Zutaten.<br>Nichts mehr.</h2>
-
-      <div class="mkm-ingr-list mkm-fade-in">
-        {%- assign ingredients = "Wasser|Isomaltulose|Dextrose|Fructose|Salz|Natriumcitrat|Zitronensäure|Aroma|Kaliumchlorid|Kaliumsorbat|Xanthan|Natriumbenzoat" | split: "|" -%}
-        {%- for ing in ingredients -%}
-          <div class="mkm-ingr-item">
-            <span class="mkm-ingr-item__name">{{ ing }}</span>
-          </div>
-        {%- endfor -%}
+    <div class="mkm-label-box">
+      <div class="mkm-label-box__head">
+        <h3>Nährwertangaben</h3>
+        <p>pro Portion (60 g Gel) · n°3 endurance</p>
       </div>
-
-      <p style="margin-top:24px;font-family:var(--mk-font-mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--mk-grey-400);line-height:1.7;">
-        + Isomaltulose &amp; Dextrose · keine künstlichen Süßungsmittel ·<br>
-        ohne Konservierungsstoffe aus chemischer Herstellung
-      </p>
+      <div class="mkm-label-box__row mkm-label-box__row--bold">
+        <span class="mkm-label-box__key">Kohlenhydrate</span>
+        <span class="mkm-label-box__val">30 g</span>
+      </div>
+      <div class="mkm-label-box__row">
+        <span class="mkm-label-box__key mkm-label-box__key--sub">davon Isomaltulose</span>
+        <span class="mkm-label-box__val">15 g</span>
+      </div>
+      <div class="mkm-label-box__row">
+        <span class="mkm-label-box__key mkm-label-box__key--sub">davon Dextrose</span>
+        <span class="mkm-label-box__val">8 g</span>
+      </div>
+      <div class="mkm-label-box__row">
+        <span class="mkm-label-box__key mkm-label-box__key--sub">davon Fructose</span>
+        <span class="mkm-label-box__val">7 g</span>
+      </div>
+      <div class="mkm-label-box__row mkm-label-box__row--bold">
+        <span class="mkm-label-box__key">Energie</span>
+        <span class="mkm-label-box__val">92 kcal</span>
+      </div>
+      <div class="mkm-label-box__row">
+        <span class="mkm-label-box__key">Protein</span>
+        <span class="mkm-label-box__val">0 g</span>
+      </div>
+      <div class="mkm-label-box__row">
+        <span class="mkm-label-box__key">Fett</span>
+        <span class="mkm-label-box__val">0 g</span>
+      </div>
+      <div class="mkm-label-box__row">
+        <span class="mkm-label-box__key">Natrium</span>
+        <span class="mkm-label-box__val">110 mg</span>
+      </div>
+      <div class="mkm-label-box__footer">
+        Net Wt. 60 g · n°3 endurance<br>
+        Hergestellt in Bayern · DE
+      </div>
     </div>
 
   </div>
