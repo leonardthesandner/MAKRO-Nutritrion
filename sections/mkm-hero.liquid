@@ -1,0 +1,88 @@
+<link rel="stylesheet" href="{{ 'makro-mobile.css' | asset_url }}">
+
+<section class="mkm-hero">
+  <div class="mkm-hero__inner">
+
+    <!-- image -->
+    <div class="mkm-hero__image-wrap">
+      {%- if section.settings.product_image != blank -%}
+        <img
+          class="mkm-hero__img"
+          src="{{ section.settings.product_image | image_url: width: 800 }}"
+          alt="makro. n°3 endurance"
+          width="400"
+          height="600"
+          loading="eager"
+          fetchpriority="high"
+        >
+      {%- else -%}
+        <img
+          class="mkm-hero__img"
+          src="{{ 'n3-front.png' | asset_url }}"
+          alt="makro. n°3 endurance"
+          width="400"
+          height="600"
+          loading="eager"
+        >
+      {%- endif -%}
+    </div>
+
+    <!-- content -->
+    <div class="mkm-hero__content">
+      <div class="mkm-hero__eyebrow">
+        <span class="mkm-label mkm-label--paper">n°3 · endurance</span>
+        <span class="mkm-label mkm-label--paper" style="color:rgba(242,239,232,0.35)">jetzt verfügbar</span>
+      </div>
+
+      <div>
+        <div class="mkm-hero__numeral"><sup>n°</sup>3</div>
+        <h1 class="mkm-hero__title">{{ section.settings.title }}</h1>
+        <p class="mkm-hero__desc" style="margin-top:16px;">{{ section.settings.desc }}</p>
+      </div>
+
+      <div>
+        <div class="mkm-hero__specs">
+          <div class="mkm-hero__spec">
+            <div class="mkm-hero__spec-val">30 g</div>
+            <div class="mkm-hero__spec-key">Carbs</div>
+          </div>
+          <div class="mkm-hero__spec">
+            <div class="mkm-hero__spec-val">60 g</div>
+            <div class="mkm-hero__spec-key">Net Wt.</div>
+          </div>
+          <div class="mkm-hero__spec">
+            <div class="mkm-hero__spec-val">92 kcal</div>
+            <div class="mkm-hero__spec-key">Energie</div>
+          </div>
+        </div>
+
+        <div class="mkm-hero__cta" style="margin-top:16px;">
+          <a href="{{ section.settings.cta_link | default: routes.collections_url }}" class="mkm-hero__btn">
+            <span>{{ section.settings.cta_label | default: 'jetzt kaufen' }}</span>
+            <span>→</span>
+          </a>
+          <a href="#lineup" class="mkm-hero__btn mkm-hero__btn--ghost">
+            <span>alle produkte</span>
+            <span>↓</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "mkm. Hero",
+  "tag": "section",
+  "settings": [
+    { "type": "image_picker", "id": "product_image", "label": "Produkt-Bild" },
+    { "type": "text", "id": "title", "label": "Headline", "default": "endurance." },
+    { "type": "text", "id": "desc", "label": "Beschreibung", "default": "Isomaltulose & Dextrose. 30 g Carbs pro Gel. Kein Crash. Kein Hype. Nur Energie, die hält." },
+    { "type": "url", "id": "cta_link", "label": "CTA Link" },
+    { "type": "text", "id": "cta_label", "label": "CTA Text", "default": "jetzt kaufen" }
+  ],
+  "presets": [{ "name": "mkm. Hero" }]
+}
+{% endschema %}

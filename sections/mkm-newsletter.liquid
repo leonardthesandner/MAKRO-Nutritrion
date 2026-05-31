@@ -1,0 +1,46 @@
+{% form 'customer', id: 'mkm-nl-form' %}
+  <input type="hidden" name="contact[tags]" value="newsletter">
+  <section class="mkm-newsletter">
+    <div class="mkm-newsletter__inner">
+      <span class="mkm-label">{{ section.settings.label }}</span>
+      <h2 class="mkm-newsletter__title">{{ section.settings.title }}</h2>
+
+      <div class="mkm-newsletter__form">
+        <label for="mkm-email" class="mkm-label" style="margin-bottom:8px;display:block;">E-Mail</label>
+        <input
+          type="email"
+          name="contact[email]"
+          id="mkm-email"
+          class="mkm-newsletter__input"
+          placeholder="{{ section.settings.placeholder }}"
+          required
+          autocomplete="email"
+          inputmode="email"
+        >
+        <button type="submit" class="mkm-newsletter__submit">
+          <span>{{ section.settings.button }}</span>
+          <span>→</span>
+        </button>
+        {%- if form.posted_successfully? -%}
+          <p style="margin-top:16px;font-family:var(--mk-font-mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mk-positive);">
+            ✓ eingetragen. willkommen.
+          </p>
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+{% endform %}
+
+{% schema %}
+{
+  "name": "mkm. Newsletter",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Label", "default": "labornachrichten · newsletter" },
+    { "type": "text", "id": "title", "label": "Titel", "default": "Erste erfahren, wenn n°4 kommt." },
+    { "type": "text", "id": "placeholder", "label": "Placeholder", "default": "deine@email.de" },
+    { "type": "text", "id": "button", "label": "Button", "default": "benachrichtigen" }
+  ],
+  "presets": [{ "name": "mkm. Newsletter" }]
+}
+{% endschema %}

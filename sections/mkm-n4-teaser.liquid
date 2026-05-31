@@ -1,0 +1,60 @@
+<section class="mkm-teaser">
+  <div class="mkm-teaser__inner">
+
+    <!-- Left -->
+    <div class="mkm-teaser__left mkm-wrap" style="padding-left:20px;padding-right:20px;">
+      <div>
+        <span class="mkm-label mkm-label--paper">nächstes gel · Q3 2026</span>
+        <div class="mkm-teaser__num"><sup>n°</sup>4</div>
+      </div>
+      <h2 class="mkm-teaser__title">Cola.</h2>
+      <p class="mkm-teaser__sub">
+        13 Zutaten. 30 g Carbs. Koffein aus natürlicher Quelle.
+        Entwickelt für den letzten Anstieg, die letzte Runde, den letzten Kilometer.
+      </p>
+      <div class="mkm-teaser__badge">
+        <span>○</span>
+        <span>feldtest · 06 / 2026</span>
+      </div>
+    </div>
+
+    <!-- Right: ingredient list -->
+    <div class="mkm-teaser__right mkm-wrap" style="padding-left:20px;padding-right:20px;">
+      <div class="mkm-cola-head">
+        <span class="mkm-label mkm-label--paper">zutaten · n°4 cola</span>
+        <h4>13 Zutaten · 30 g Carbs/Gel</h4>
+      </div>
+
+      <div class="mkm-cola-ingr">
+        {%- assign cola_ingr = "Maltodextrin,15|Isomaltulose,7|Dextrose,5|Fructose,3|Wasser,29|Salz,0.20|Natriumcitrat,0.30|Zitronensäure,0.25|Cola Aroma,0.17|Kaliumchlorid,0.05|Kaliumsorbat,0.03|Xanthan,0.04|Natriumbenzoat,0.03" | split: "|" -%}
+        {%- assign cola_max = 29 -%}
+        {%- for item in cola_ingr -%}
+          {%- assign p = item | split: "," -%}
+          {%- assign cola_num = p[1] | times: 1.0 -%}
+          {%- assign cola_pct = cola_num | divided_by: cola_max | times: 100 | round -%}
+          <div class="mkm-cola-ingr__row">
+            <span class="mkm-cola-ingr__name">{{ p[0] }}</span>
+            <div class="mkm-cola-ingr__bar">
+              <div class="mkm-cola-ingr__bar-fill" style="width:{{ cola_pct | at_least: 3 }}%"></div>
+            </div>
+            <span class="mkm-cola-ingr__amt">{{ p[1] }} g</span>
+          </div>
+        {%- endfor -%}
+      </div>
+
+      <p style="margin-top:20px;font-family:var(--mk-font-mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(242,239,232,0.25);line-height:1.7;">
+        vorläufige Rezeptur · Änderungen vorbehalten · Lot 26F-X · n°4
+      </p>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "mkm. n°4 Teaser",
+  "tag": "section",
+  "settings": [],
+  "presets": [{ "name": "mkm. n°4 Teaser" }]
+}
+{% endschema %}

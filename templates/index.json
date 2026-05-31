@@ -1,161 +1,41 @@
 {
   "sections": {
-    "makro-hero": {
-      "type": "makro-hero",
+    "hero": {
+      "type": "mkm-hero",
       "settings": {
-        "eyebrow": "n°1 · endurance",
-        "numeral": "1",
-        "tagline": "carbs to keep going.",
+        "title": "endurance.",
+        "desc": "Isomaltulose & Dextrose. 30 g Carbs pro Gel. Kein Crash. Kein Hype. Nur Energie, die hält.",
         "cta_label": "jetzt kaufen",
         "cta_link": "/collections/all"
       }
     },
-    "makro-series": {
-      "type": "makro-series",
-      "blocks": {
-        "n1": {
-          "type": "product",
-          "settings": {
-            "numeral": "1",
-            "name": "endurance",
-            "stat": "23 g carbs / gel",
-            "price": "ab 29,90 €",
-            "coming_soon": false
-          }
-        },
-        "n2": {
-          "type": "product",
-          "settings": {
-            "numeral": "2",
-            "name": "—",
-            "coming_soon": true
-          }
-        },
-        "n3": {
-          "type": "product",
-          "settings": {
-            "numeral": "3",
-            "name": "caffeine",
-            "stat": "75 mg koffein",
-            "price": "ab 32,90 €",
-            "coming_soon": false
-          }
-        }
-      },
-      "block_order": ["n1", "n2", "n3"],
-      "settings": {
-        "label": "produkt-reihe · 2026",
-        "title": "Die nummerierte Reihe."
-      }
-    },
-    "makro-facts": {
-      "type": "makro-facts",
-      "blocks": {
-        "stat-1": {
-          "type": "stat",
-          "settings": {
-            "number": "23 g",
-            "label": "carbs / gel",
-            "description": "Isomaltulose & Dextrose für gleichmäßige, lang anhaltende Energie ohne Crash."
-          }
-        },
-        "stat-2": {
-          "type": "stat",
-          "settings": {
-            "number": "391 kJ",
-            "label": "pro 100 g",
-            "description": "Optimale Energiedichte. Keine unnötigen Zusatzstoffe, keine Süßungsmittel."
-          }
-        },
-        "stat-3": {
-          "type": "stat",
-          "settings": {
-            "number": "+ 75 mg",
-            "label": "koffein · n°3",
-            "description": "Natürliches Koffein aus Grüntee-Extrakt für den entscheidenden Schub."
-          }
-        }
-      },
-      "block_order": ["stat-1", "stat-2", "stat-3"],
+    "lineup": {
+      "type": "mkm-lineup",
       "settings": {}
     },
-    "makro-science": {
-      "type": "makro-science",
-      "settings": {
-        "label": "wissenschaft · rezeptur",
-        "title": "Zwei Kohlenhydrate. Eine Kurve.",
-        "body": "n°1 kombiniert Isomaltulose und Dextrose im optimalen Verhältnis. Dextrose liefert sofort verfügbare Energie. Isomaltulose hält den Blutzucker gleichmäßig — kein Crash, keine Spitze. Das Ergebnis: anhaltende Leistung über 90+ Minuten.",
-        "link_label": "zur Wissenschaft",
-        "chart_label": "glukose-aufnahme · absorption curve",
-        "chart_note": "schematische Darstellung · Lot 24F-A019 · interne Studie"
-      }
+    "specs": {
+      "type": "mkm-specs",
+      "settings": {}
     },
-    "makro-quote": {
-      "type": "makro-quote",
-      "settings": {
-        "quote": "kein hype. einfach kohlenhydrate, die funktionieren.",
-        "attribution": "K. M. · ultra runner · Garmisch"
-      }
+    "n4-teaser": {
+      "type": "mkm-n4-teaser",
+      "settings": {}
     },
-    "makro-journal": {
-      "type": "makro-journal",
-      "blocks": {
-        "entry-1": {
-          "type": "entry",
-          "settings": {
-            "date": "21.05.26",
-            "tag": "technical",
-            "title": "Aufnahmekinetik von Isomaltulose"
-          }
-        },
-        "entry-2": {
-          "type": "entry",
-          "settings": {
-            "date": "02.05.26",
-            "tag": "production",
-            "title": "Charge 24F · Lot & MHD"
-          }
-        },
-        "entry-3": {
-          "type": "entry",
-          "settings": {
-            "date": "14.04.26",
-            "tag": "field",
-            "title": "Feldtest Zugspitz Ultratrail"
-          }
-        },
-        "entry-4": {
-          "type": "entry",
-          "settings": {
-            "date": "01.04.26",
-            "tag": "plant",
-            "title": "Werkstour Bayern"
-          }
-        }
-      },
-      "block_order": ["entry-1", "entry-2", "entry-3", "entry-4"],
-      "settings": {
-        "label": "laborbuch · journal",
-        "title": "Aus dem Laborbuch."
-      }
-    },
-    "makro-newsletter": {
-      "type": "makro-newsletter",
+    "newsletter": {
+      "type": "mkm-newsletter",
       "settings": {
         "label": "labornachrichten · newsletter",
-        "title": "Notizen abonnieren.",
+        "title": "Erste erfahren, wenn n°4 kommt.",
         "placeholder": "deine@email.de",
-        "button_label": "eintragen"
+        "button": "benachrichtigen"
       }
     }
   },
   "order": [
-    "makro-hero",
-    "makro-series",
-    "makro-facts",
-    "makro-science",
-    "makro-quote",
-    "makro-journal",
-    "makro-newsletter"
+    "hero",
+    "lineup",
+    "specs",
+    "n4-teaser",
+    "newsletter"
   ]
 }
