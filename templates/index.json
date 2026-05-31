@@ -9,22 +9,6 @@
         "cta_link": "/collections/all"
       }
     },
-    "lineup": {
-      "type": "mkm-lineup",
-      "settings": {}
-    },
-    "science": {
-      "type": "mkm-science",
-      "settings": {}
-    },
-    "specs": {
-      "type": "mkm-specs",
-      "settings": {}
-    },
-    "n4-teaser": {
-      "type": "mkm-n4-teaser",
-      "settings": {}
-    },
     "newsletter": {
       "type": "mkm-newsletter",
       "settings": {
@@ -37,10 +21,6 @@
   },
   "order": [
     "hero",
-    "lineup",
-    "science",
-    "specs",
-    "n4-teaser",
     "newsletter"
   ]
 }
