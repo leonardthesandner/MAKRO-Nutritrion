@@ -728,11 +728,28 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    ============================================================ */
 a, button {
   -webkit-tap-highlight-color: transparent;
+}
+
+/* Only apply min-height to interactive controls, not all links */
+button,
+.mkm-hero__btn,
+.mkm-newsletter__submit,
+.mkm-btn-submit,
+.mkr-burger,
+.mkr-icon-btn {
   min-height: 44px;
   display: inline-flex;
   align-items: center;
 }
 a.mkm-card, a.mkm-hero__btn { display: flex; }
+
+/* Footer links: block so full width is clickable */
+.mkr-footer ul { list-style: none; }
+.mkr-footer ul li a {
+  display: block;
+  padding: 5px 0;
+  min-height: 0;
+}
 
 /* ============================================================
    ANIMATIONS
