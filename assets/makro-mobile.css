@@ -52,12 +52,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
    HOME HERO
    ============================================================ */
 .mkm-hero {
-  background: var(--mk-ink);
-  color: var(--mk-paper);
+  background: var(--mk-paper);
+  color: var(--mk-ink);
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid var(--mk-ink);
+  border-bottom: 1px solid rgba(14,14,14,0.1);
   position: relative;
   overflow: hidden;
 }
@@ -81,12 +81,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .mkm-hero__image-wrap {
   order: 1;
-  background: #1A1A1A;
+  background: var(--mk-paper);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 40px 20px 32px;
-  border-bottom: 1px solid #2A2A28;
+  border-bottom: 1px solid rgba(14,14,14,0.08);
   min-height: 55vw;
   position: relative;
 }
@@ -95,7 +95,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   max-height: 52vw;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+  mix-blend-mode: multiply;
+  filter: drop-shadow(0 12px 32px rgba(14,14,14,0.12));
 }
 
 .mkm-hero__eyebrow {
@@ -110,13 +111,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: clamp(80px, 22vw, 200px);
   line-height: 0.85;
   letter-spacing: -0.06em;
-  color: var(--mk-paper);
+  color: var(--mk-ink);
 }
 .mkm-hero__numeral sup {
   font-size: 0.38em;
   vertical-align: 0.9em;
   font-weight: 800;
-  color: rgba(242,239,232,0.4);
+  color: rgba(14,14,14,0.25);
 }
 
 .mkm-hero__title {
@@ -124,12 +125,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 1;
-  color: var(--mk-paper);
+  color: var(--mk-ink);
 }
 
 .mkm-hero__desc {
   font-size: 15px;
-  color: rgba(242,239,232,0.6);
+  color: rgba(14,14,14,0.55);
   line-height: 1.6;
   max-width: 36ch;
 }
@@ -137,12 +138,12 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .mkm-hero__specs {
   display: flex;
   gap: 0;
-  border: 1px solid #2A2A28;
+  border: 1px solid rgba(14,14,14,0.1);
 }
 .mkm-hero__spec {
   flex: 1;
   padding: 12px 16px;
-  border-right: 1px solid #2A2A28;
+  border-right: 1px solid rgba(14,14,14,0.1);
 }
 .mkm-hero__spec:last-child { border-right: none; }
 .mkm-hero__spec-val {
@@ -150,14 +151,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-weight: 700;
   font-size: 20px;
   letter-spacing: -0.02em;
-  color: var(--mk-paper);
+  color: var(--mk-ink);
 }
 .mkm-hero__spec-key {
   font-family: var(--mk-font-mono);
   font-size: 9px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(242,239,232,0.4);
+  color: rgba(14,14,14,0.35);
   margin-top: 2px;
 }
 
@@ -171,8 +172,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   align-items: center;
   justify-content: space-between;
   padding: 18px 24px;
-  background: var(--mk-paper);
-  color: var(--mk-ink);
+  background: var(--mk-ink);
+  color: var(--mk-paper);
   font-family: var(--mk-font-mono);
   font-size: 12px;
   letter-spacing: 0.12em;
@@ -181,11 +182,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: opacity 150ms ease;
   width: 100%;
 }
-.mkm-hero__btn:hover { opacity: 0.88; }
+.mkm-hero__btn:hover { opacity: 0.85; }
 .mkm-hero__btn--ghost {
   background: transparent;
-  color: rgba(242,239,232,0.6);
-  border: 1px solid #2A2A28;
+  color: rgba(14,14,14,0.55);
+  border: 1px solid rgba(14,14,14,0.2);
 }
 
 /* Desktop: side by side */
