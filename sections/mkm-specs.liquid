@@ -56,22 +56,10 @@
       <h2 class="mkm-specs__title" style="margin-top:10px;margin-bottom:28px;">13 Zutaten.<br>Nichts mehr.</h2>
 
       <div class="mkm-ingr-list mkm-fade-in">
-        {%- assign ingredients = "Wasser,29 g|Isomaltulose,15 g|Dextrose,8 g|Fructose,7 g|Salz,0.20 g|Natriumcitrat,0.30 g|Zitronensäure,0.25 g|Aroma,0.17 g|Kaliumchlorid,0.05 g|Kaliumsorbat,0.03 g|Xanthan,0.04 g|Natriumbenzoat,0.03 g" | split: "|" -%}
-        {%- assign max_val = 29 -%}
+        {%- assign ingredients = "Wasser|Isomaltulose|Dextrose|Fructose|Salz|Natriumcitrat|Zitronensäure|Aroma|Kaliumchlorid|Kaliumsorbat|Xanthan|Natriumbenzoat" | split: "|" -%}
         {%- for ing in ingredients -%}
-          {%- assign parts = ing | split: "," -%}
-          {%- assign name = parts[0] -%}
-          {%- assign amt = parts[1] -%}
-          {%- assign num = amt | remove: " g" | times: 1.0 -%}
-          {%- assign pct = num | divided_by: max_val | times: 100 | round -%}
           <div class="mkm-ingr-item">
-            <span class="mkm-ingr-item__name">{{ name }}</span>
-            <div class="mkm-ingr-item__bar-wrap">
-              <div class="mkm-ingr-item__bar">
-                <div class="mkm-ingr-item__bar-fill" style="width:{{ pct }}%"></div>
-              </div>
-              <span class="mkm-ingr-item__amount">{{ amt }}</span>
-            </div>
+            <span class="mkm-ingr-item__name">{{ ing }}</span>
           </div>
         {%- endfor -%}
       </div>

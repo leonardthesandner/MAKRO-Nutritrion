@@ -26,24 +26,16 @@
       </div>
 
       <div class="mkm-cola-ingr">
-        {%- assign cola_ingr = "Maltodextrin,15|Isomaltulose,7|Dextrose,5|Fructose,3|Wasser,29|Salz,0.20|Natriumcitrat,0.30|Zitronensäure,0.25|Cola Aroma,0.17|Kaliumchlorid,0.05|Kaliumsorbat,0.03|Xanthan,0.04|Natriumbenzoat,0.03" | split: "|" -%}
-        {%- assign cola_max = 29 -%}
+        {%- assign cola_ingr = "Maltodextrin|Isomaltulose|Dextrose|Fructose|Wasser|Salz|Natriumcitrat|Zitronensäure|Cola Aroma|Kaliumchlorid|Kaliumsorbat|Xanthan|Natriumbenzoat" | split: "|" -%}
         {%- for item in cola_ingr -%}
-          {%- assign p = item | split: "," -%}
-          {%- assign cola_num = p[1] | times: 1.0 -%}
-          {%- assign cola_pct = cola_num | divided_by: cola_max | times: 100 | round -%}
-          <div class="mkm-cola-ingr__row">
-            <span class="mkm-cola-ingr__name">{{ p[0] }}</span>
-            <div class="mkm-cola-ingr__bar">
-              <div class="mkm-cola-ingr__bar-fill" style="width:{{ cola_pct | at_least: 3 }}%"></div>
-            </div>
-            <span class="mkm-cola-ingr__amt">{{ p[1] }} g</span>
+          <div class="mkm-cola-ingr__row" style="grid-template-columns:1fr;">
+            <span class="mkm-cola-ingr__name">{{ item }}</span>
           </div>
         {%- endfor -%}
       </div>
 
       <p style="margin-top:20px;font-family:var(--mk-font-mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(242,239,232,0.25);line-height:1.7;">
-        vorläufige Rezeptur · Änderungen vorbehalten · Lot 26F-X · n°4
+        in entwicklung · Änderungen vorbehalten · n°4
       </p>
     </div>
 
