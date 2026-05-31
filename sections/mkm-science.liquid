@@ -142,6 +142,17 @@
   </div>
 </section>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('is-visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.mkm-fade-in').forEach(function(el) { observer.observe(el); });
+  });
+</script>
+
 {% schema %}
 {
   "name": "mkm. Science",
