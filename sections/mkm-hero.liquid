@@ -3,7 +3,20 @@
 <section class="mkm-hero">
   <div class="mkm-hero__inner">
 
-    <!-- image -->
+    <!-- 1. Text: Label + Numeral + Titel + Beschreibung -->
+    <div class="mkm-hero__text">
+      <div class="mkm-hero__eyebrow">
+        <span class="mkm-label">n°1 · endurance</span>
+        <span class="mkm-label">jetzt verfügbar</span>
+      </div>
+      <div>
+        <div class="mkm-hero__numeral"><sup>n°</sup>1</div>
+        <h1 class="mkm-hero__title">{{ section.settings.title }}</h1>
+        <p class="mkm-hero__desc" style="margin-top:16px;">{{ section.settings.desc }}</p>
+      </div>
+    </div>
+
+    <!-- 2. Produktbild (mobile: zwischen Text und Buttons / desktop: rechte Spalte) -->
     <div class="mkm-hero__image-wrap">
       {%- if section.settings.product_image != blank -%}
         <img
@@ -27,45 +40,31 @@
       {%- endif -%}
     </div>
 
-    <!-- content -->
-    <div class="mkm-hero__content">
-      <div class="mkm-hero__eyebrow">
-        <span class="mkm-label">n°1 · endurance</span>
-        <span class="mkm-label">jetzt verfügbar</span>
-      </div>
-
-      <div>
-        <div class="mkm-hero__numeral"><sup>n°</sup>1</div>
-        <h1 class="mkm-hero__title">{{ section.settings.title }}</h1>
-        <p class="mkm-hero__desc" style="margin-top:16px;">{{ section.settings.desc }}</p>
-      </div>
-
-      <div>
-        <div class="mkm-hero__specs">
-          <div class="mkm-hero__spec">
-            <div class="mkm-hero__spec-val">30 g</div>
-            <div class="mkm-hero__spec-key">Carbs</div>
-          </div>
-          <div class="mkm-hero__spec">
-            <div class="mkm-hero__spec-val">60 g</div>
-            <div class="mkm-hero__spec-key">Net Wt.</div>
-          </div>
-          <div class="mkm-hero__spec">
-            <div class="mkm-hero__spec-val">92 kcal</div>
-            <div class="mkm-hero__spec-key">Energie</div>
-          </div>
+    <!-- 3. Bottom: Specs-Leiste + CTA Buttons -->
+    <div class="mkm-hero__bottom">
+      <div class="mkm-hero__specs">
+        <div class="mkm-hero__spec">
+          <div class="mkm-hero__spec-val">30 g</div>
+          <div class="mkm-hero__spec-key">Carbs</div>
         </div>
-
-        <div class="mkm-hero__cta" style="margin-top:16px;">
-          <a href="{{ section.settings.cta_link | default: routes.collections_url }}" class="mkm-hero__btn">
-            <span>{{ section.settings.cta_label | default: 'jetzt kaufen' }}</span>
-            <span>→</span>
-          </a>
-          <a href="#lineup" class="mkm-hero__btn mkm-hero__btn--ghost">
-            <span>alle produkte</span>
-            <span>↓</span>
-          </a>
+        <div class="mkm-hero__spec">
+          <div class="mkm-hero__spec-val">60 g</div>
+          <div class="mkm-hero__spec-key">Net Wt.</div>
         </div>
+        <div class="mkm-hero__spec">
+          <div class="mkm-hero__spec-val">92 kcal</div>
+          <div class="mkm-hero__spec-key">Energie</div>
+        </div>
+      </div>
+      <div class="mkm-hero__cta">
+        <a href="{{ section.settings.cta_link | default: routes.collections_url }}" class="mkm-hero__btn">
+          <span>{{ section.settings.cta_label | default: 'jetzt kaufen' }}</span>
+          <span>→</span>
+        </a>
+        <a href="#lineup" class="mkm-hero__btn mkm-hero__btn--ghost">
+          <span>alle produkte</span>
+          <span>↓</span>
+        </a>
       </div>
     </div>
 

@@ -58,46 +58,50 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid rgba(14,14,14,0.1);
-  position: relative;
-  overflow: hidden;
 }
 
-/* Mobile: stacked */
+/* Mobile: Text → Bild → Buttons (stacked) */
 .mkm-hero__inner {
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-.mkm-hero__content {
-  padding: 48px 20px 40px;
+/* 1. Text-Block */
+.mkm-hero__text {
+  padding: 40px 20px 32px;
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  flex: 1;
-  justify-content: space-between;
-  order: 2;
+  gap: 20px;
 }
 
+/* 2. Produktbild — mobile: inline zwischen Text und Buttons */
 .mkm-hero__image-wrap {
-  order: 1;
-  background: var(--mk-paper);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 32px 20px 24px;
+  background: var(--mk-paper);
+  padding: 28px 40px;
+  border-top: 1px solid rgba(14,14,14,0.08);
   border-bottom: 1px solid rgba(14,14,14,0.08);
-  min-height: 76vw;
-  position: relative;
+  min-height: 62vw;
 }
 
 .mkm-hero__img {
-  max-height: 70vw;
-  max-width: 220px;
+  max-height: 56vw;
+  max-width: 200px;
   width: auto;
   object-fit: contain;
   mix-blend-mode: multiply;
-  filter: drop-shadow(0 16px 36px rgba(14,14,14,0.14));
+  filter: drop-shadow(0 12px 28px rgba(14,14,14,0.12));
+}
+
+/* 3. Bottom: Specs + Buttons */
+.mkm-hero__bottom {
+  padding: 28px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .mkm-hero__eyebrow {
@@ -190,30 +194,41 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border: 1px solid rgba(14,14,14,0.2);
 }
 
-/* Desktop: side by side */
+/* Desktop: CSS Grid — Text+Bottom links, Bild rechts */
 @media (min-width: 900px) {
   .mkm-hero__inner {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 55% 45%;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+      "text  image"
+      "bottom image";
     min-height: calc(100svh - 112px);
   }
-  .mkm-hero__content {
-    order: 1;
-    padding: 64px 48px;
-    width: 55%;
+  .mkm-hero__text {
+    grid-area: text;
+    padding: 64px 48px 32px;
     border-right: 1px solid rgba(14,14,14,0.1);
-    justify-content: space-between;
+    gap: 28px;
   }
   .mkm-hero__image-wrap {
-    order: 2;
-    flex: 1;
+    grid-area: image;
     min-height: auto;
+    border-top: none;
     border-bottom: none;
-    border-left: none;
-    padding: 64px;
+    border-left: 1px solid rgba(14,14,14,0.1);
+    padding: 64px 48px;
   }
   .mkm-hero__img {
     max-height: 70vh;
     max-width: 340px;
+  }
+  .mkm-hero__bottom {
+    grid-area: bottom;
+    padding: 28px 48px 56px;
+    border-right: 1px solid rgba(14,14,14,0.1);
+    border-top: 1px solid rgba(14,14,14,0.08);
+    gap: 16px;
   }
 }
 
