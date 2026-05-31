@@ -13,6 +13,10 @@
       "type": "mkm-lineup",
       "settings": {}
     },
+    "science": {
+      "type": "mkm-science",
+      "settings": {}
+    },
     "specs": {
       "type": "mkm-specs",
       "settings": {}
@@ -34,6 +38,7 @@
   "order": [
     "hero",
     "lineup",
+    "science",
     "specs",
     "n4-teaser",
     "newsletter"

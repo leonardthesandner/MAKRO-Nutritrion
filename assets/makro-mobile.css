@@ -748,3 +748,196 @@ a.mkm-card, a.mkm-hero__btn { display: flex; }
     transform: none;
   }
 }
+
+/* ============================================================
+   SCIENCE SECTION
+   ============================================================ */
+.mkm-science {
+  background: var(--mk-paper);
+  padding: 80px 0 72px;
+  border-top: 1px solid rgba(14,14,14,0.08);
+}
+
+.mkm-science__head {
+  max-width: 640px;
+  margin-bottom: 48px;
+}
+
+.mkm-science__title {
+  font-family: var(--mk-font-sans);
+  font-size: clamp(36px, 8vw, 64px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--mk-ink);
+  margin-top: 12px;
+  margin-bottom: 18px;
+}
+
+.mkm-science__intro {
+  font-family: var(--mk-font-sans);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--mk-grey-500);
+}
+
+/* Chart wrapper */
+.mkm-chart-wrap {
+  background: #FAFAF8;
+  border: 1px solid rgba(14,14,14,0.09);
+  padding: 24px 16px 20px;
+  margin-bottom: 2px;
+}
+@media (min-width: 768px) { .mkm-chart-wrap { padding: 32px; } }
+
+.mkm-chart__title {
+  font-family: var(--mk-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mk-grey-400);
+  margin-bottom: 24px;
+}
+
+.mkm-chart {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+/* Y-axis labels */
+.mkm-chart__y {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 26px;
+  flex-shrink: 0;
+  width: 38px;
+}
+.mkm-chart__y span {
+  font-family: var(--mk-font-mono);
+  font-size: 8px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mk-grey-300);
+  line-height: 1;
+}
+
+/* SVG plot */
+.mkm-chart__plot { flex: 1; min-width: 0; }
+.mkm-chart__plot svg {
+  display: block;
+  width: 100%;
+  aspect-ratio: 480 / 180;
+  color: var(--mk-ink);
+}
+
+/* X-axis labels */
+.mkm-chart__x {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+.mkm-chart__x span {
+  font-family: var(--mk-font-mono);
+  font-size: 8px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--mk-grey-300);
+  line-height: 1;
+}
+
+/* Legend */
+.mkm-chart__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 24px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(14,14,14,0.08);
+}
+.mkm-chart__legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mk-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mk-ink);
+}
+.mkm-chart__legend-item svg { flex-shrink: 0; }
+
+.mkm-chart__disclaimer {
+  margin-top: 14px;
+  font-family: var(--mk-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mk-grey-300);
+}
+
+/* Ingredient cards grid */
+.mkm-sci-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: rgba(14,14,14,0.09);
+  border: 1px solid rgba(14,14,14,0.09);
+  margin-top: 48px;
+}
+@media (min-width: 640px) {
+  .mkm-sci-cards { grid-template-columns: 1fr 1fr; }
+}
+
+.mkm-sci-card {
+  background: var(--mk-paper);
+  padding: 28px 24px 32px;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) { .mkm-sci-card { padding: 36px 32px; } }
+
+/* Hero card (Isomaltulose) */
+.mkm-sci-card--hero {
+  background: var(--mk-ink);
+  color: var(--mk-paper);
+}
+
+.mkm-sci-card__num {
+  font-family: var(--mk-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mk-grey-400);
+  margin-bottom: 18px;
+}
+.mkm-sci-card--hero .mkm-sci-card__num { color: rgba(242,239,232,0.3); }
+
+.mkm-sci-card__name {
+  font-family: var(--mk-font-sans);
+  font-size: clamp(20px, 3vw, 26px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--mk-ink);
+  margin-bottom: 6px;
+}
+.mkm-sci-card--hero .mkm-sci-card__name { color: var(--mk-paper); }
+
+.mkm-sci-card__tag {
+  font-family: var(--mk-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mk-grey-400);
+  margin-bottom: 18px;
+}
+.mkm-sci-card--hero .mkm-sci-card__tag { color: rgba(242,239,232,0.4); }
+
+.mkm-sci-card__desc {
+  font-family: var(--mk-font-sans);
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--mk-grey-500);
+}
+.mkm-sci-card--hero .mkm-sci-card__desc { color: rgba(242,239,232,0.65); }
