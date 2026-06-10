@@ -335,11 +335,12 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
   transition: max-height .25s ease;
 }
-.accordion-item.active .accordion-panel { max-height: 360px; }
+.accordion-item.active .accordion-panel { max-height: 320px; }
 .accordion-panel p { color: var(--muted); padding-bottom: 20px; font-size: 0.95rem; max-width: 56ch; }
-.study-link { padding-bottom: 0 !important; padding-top: 0; }
-.study-link a { color: var(--accent); font-weight: 600; font-size: 0.85rem; text-decoration: underline; }
-.study-link a:hover { color: var(--ink); }
+
+.study-links { display: flex; flex-direction: column; gap: 8px; margin-top: 24px; }
+.study-links a { color: var(--accent); font-weight: 600; font-size: 0.85rem; text-decoration: underline; }
+.study-links a:hover { color: var(--ink); }
 
 .science-visual { position: sticky; top: 100px; display: flex; flex-direction: column; gap: 20px; }
 .science-photo { width: 100%; border-radius: var(--radius); display: block; object-fit: cover; max-height: 280px; }
