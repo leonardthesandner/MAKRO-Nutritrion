@@ -404,6 +404,7 @@ a { color: inherit; text-decoration: none; }
 
   .products, .science, .impressum { padding: 60px 0; }
   .product-card { padding: 24px; }
+  .product-swiper { margin: -24px -24px 24px; }
 
   .science-photo { max-height: 200px; }
   .chart-card { padding: 20px; }
