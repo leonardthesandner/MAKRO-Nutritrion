@@ -1,14 +1,21 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git --version)",
-      "Bash(npm --version)",
-      "Bash(git init *)",
-      "Bash(git remote *)",
-      "Bash(npm install *)",
-      "Bash(git clone *)",
-      "Bash(git fetch *)",
-      "Bash(git checkout *)"
+      "mcp__8fa93bc8-7bfb-4a4c-a62f-a601bf92d187__media_upload_widget",
+      "mcp__8fa93bc8-7bfb-4a4c-a62f-a601bf92d187__generate_image",
+      "mcp__8fa93bc8-7bfb-4a4c-a62f-a601bf92d187__job_display",
+      "mcp__8fa93bc8-7bfb-4a4c-a62f-a601bf92d187__generate_video",
+      "Bash(mkdir -p \"assets/video\")",
+      "Bash(curl -sL -o hero-loop.mp4 \"https://d8j0ntlcm91z4.cloudfront.net/user_3EumrUdzbPBZRb5hXkJStlrZybh/hf_20260610_134659_65108b2e-7754-4acc-9d65-376cbec5e7ad.mp4\")",
+      "Bash(curl -sL -o action-run.mp4 \"https://d8j0ntlcm91z4.cloudfront.net/user_3EumrUdzbPBZRb5hXkJStlrZybh/hf_20260610_134702_c05f1718-3402-4941-ab6c-4a5e104b9c66.mp4\")",
+      "Bash(curl -sL -o hero-bw-splash.png \"https://d8j0ntlcm91z4.cloudfront.net/user_3EumrUdzbPBZRb5hXkJStlrZybh/hf_20260610_144742_75d9660f-fd1f-4b5e-9527-b678c4637351.png\")",
+      "mcp__8fa93bc8-7bfb-4a4c-a62f-a601bf92d187__media_import_url",
+      "Bash(curl -sL -o hero-bw-splash.png \"https://d8j0ntlcm91z4.cloudfront.net/user_3EumrUdzbPBZRb5hXkJStlrZybh/hf_20260610_145814_25133ada-7553-43f0-a532-bc54dfc43572.jpeg\")",
+      "Bash(curl -sL -o hero-bw-splash.png \"https://d8j0ntlcm91z4.cloudfront.net/user_3EumrUdzbPBZRb5hXkJStlrZybh/hf_20260610_150416_dfcf7de4-6049-41ee-8265-3876d0f3e11b.png\")",
+      "Bash(gh auth *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)"
     ]
   }
 }
