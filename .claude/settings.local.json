@@ -15,7 +15,11 @@
       "Bash(gh auth *)",
       "Bash(git add *)",
       "Bash(git commit *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://api.github.com/repos/leonardthesandner/MAKRO-Nutritrion)",
+      "Bash(curl -s -o assets/img/product-1.png \"https://d8j0ntlcm91z4.cloudfront.net/user_3EumrUdzbPBZRb5hXkJStlrZybh/hf_20260610_154648_cb25d513-ea13-4282-b928-e6e0eff168a8.png\")",
+      "Bash(curl -s -o assets/img/product-2.png \"https://d8j0ntlcm91z4.cloudfront.net/user_3EumrUdzbPBZRb5hXkJStlrZybh/hf_20260610_154657_24c51ae4-2b06-4062-b0ca-589331506194.png\")",
+      "Bash(curl -s -o assets/img/product-3.png \"https://d8j0ntlcm91z4.cloudfront.net/user_3EumrUdzbPBZRb5hXkJStlrZybh/hf_20260610_154708_b0417e44-2fa0-4a48-bf6b-15ce540b49fe.png\")"
     ]
   }
 }

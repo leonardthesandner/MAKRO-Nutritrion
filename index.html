@@ -16,7 +16,14 @@
       <a href="#wissenschaft">Wissenschaft</a>
     </nav>
     <a href="#produkte" class="btn btn-primary">Coming Soon</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+  <nav class="nav-mobile" id="navMobile">
+    <a href="#produkte">Produkte</a>
+    <a href="#wissenschaft">Wissenschaft</a>
+  </nav>
 </header>
 
 <main>
@@ -74,6 +81,20 @@
       <div class="product-grid product-grid-single">
 
         <article class="product-card">
+          <div class="product-swiper">
+            <div class="product-swiper-track">
+              <img src="assets/img/product-1.png" alt="makro n°1 Sachet">
+              <img src="assets/img/product-2.png" alt="makro n°1 Box mit Sachets">
+              <img src="assets/img/product-3.png" alt="makro n°1 Sachet Rückseite mit Nährwerten">
+            </div>
+            <button class="swiper-arrow swiper-prev" aria-label="Vorheriges Bild">‹</button>
+            <button class="swiper-arrow swiper-next" aria-label="Nächstes Bild">›</button>
+            <div class="swiper-dots">
+              <span class="swiper-dot active"></span>
+              <span class="swiper-dot"></span>
+              <span class="swiper-dot"></span>
+            </div>
+          </div>
           <div class="product-card-top">
             <span class="product-no">n°1</span>
             <span class="product-tag">Endurance</span>
@@ -84,7 +105,7 @@
             <li><span>Carbs</span><strong>30 g</strong></li>
             <li><span>Net Wt.</span><strong>60 g</strong></li>
           </ul>
-          <a href="#" class="btn btn-outline">Details</a>
+          <a href="#" class="btn btn-outline">Coming Soon</a>
         </article>
 
       </div>
@@ -183,6 +204,8 @@
     <div class="logo">makro<span class="dot">.</span></div>
     <p>© 2026 MAKRO Nutrition. Alle Angaben ohne Gewähr. *Zertifizierung in Vorbereitung.</p>
     <a href="impressum.html">Impressum</a>
+    <a href="agb.html">AGB</a>
+    <a href="datenschutz.html">Datenschutz</a>
   </div>
 </footer>
 
