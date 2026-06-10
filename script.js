@@ -33,7 +33,7 @@ document.querySelectorAll('.product-swiper').forEach(swiper => {
   let index = 0;
 
   function update() {
-    track.style.transform = `translateX(-${index * 100}%)`;
+    track.style.transform = `translateX(-${index * (100 / slides.length)}%)`;
     dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
   }
   function go(delta) {
