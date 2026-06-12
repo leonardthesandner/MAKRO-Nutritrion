@@ -20,7 +20,13 @@
       "Bash(curl -s -o assets/img/product-1.png \"https://d8j0ntlcm91z4.cloudfront.net/user_3EumrUdzbPBZRb5hXkJStlrZybh/hf_20260610_154648_cb25d513-ea13-4282-b928-e6e0eff168a8.png\")",
       "Bash(curl -s -o assets/img/product-2.png \"https://d8j0ntlcm91z4.cloudfront.net/user_3EumrUdzbPBZRb5hXkJStlrZybh/hf_20260610_154657_24c51ae4-2b06-4062-b0ca-589331506194.png\")",
       "Bash(curl -s -o assets/img/product-3.png \"https://d8j0ntlcm91z4.cloudfront.net/user_3EumrUdzbPBZRb5hXkJStlrZybh/hf_20260610_154708_b0417e44-2fa0-4a48-bf6b-15ce540b49fe.png\")",
-      "Bash(curl -s -o assets/video/n1-splash.mp4 \"https://d8j0ntlcm91z4.cloudfront.net/user_3EumrUdzbPBZRb5hXkJStlrZybh/hf_20260612_144117_01bf25e3-a85d-4ef2-b300-e13dedb0291b.mp4\")"
+      "Bash(curl -s -o assets/video/n1-splash.mp4 \"https://d8j0ntlcm91z4.cloudfront.net/user_3EumrUdzbPBZRb5hXkJStlrZybh/hf_20260612_144117_01bf25e3-a85d-4ef2-b300-e13dedb0291b.mp4\")",
+      "Bash(ffmpeg -y -i assets/video/n1-splash.mp4 -filter_complex \"[0:v]reverse[r];[0:v][r]concat=n=2:v=1[v]\" -map \"[v]\" -an assets/video/n1-splash-loop.mp4)",
+      "Bash(where ffmpeg.exe)",
+      "Read(//c//**)",
+      "Bash(powershell -Command \"Get-Command ffmpeg -ErrorAction SilentlyContinue\")",
+      "Bash(python3 -c \"import subprocess\")",
+      "Bash(powershell -Command \"winget list ffmpeg\")"
     ]
   }
 }
