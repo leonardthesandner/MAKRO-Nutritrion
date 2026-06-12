@@ -26,7 +26,8 @@
       "Read(//c//**)",
       "Bash(powershell -Command \"Get-Command ffmpeg -ErrorAction SilentlyContinue\")",
       "Bash(python3 -c \"import subprocess\")",
-      "Bash(powershell -Command \"winget list ffmpeg\")"
+      "Bash(powershell -Command \"winget list ffmpeg\")",
+      "Bash(git mv *)"
     ]
   }
 }
