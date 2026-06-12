@@ -379,11 +379,29 @@ a { color: inherit; text-decoration: none; }
 .footer-inner a { color: var(--muted); font-size: 0.85rem; text-decoration: underline; }
 .footer-inner a:hover { color: var(--ink); }
 
+/* N1 PRODUCT PAGE */
+.n1-banner { height: 60vh; }
+.n1-overlay { gap: 12px; }
+.n1-overlay h2 { font-size: clamp(2.4rem, 6vw, 4.5rem); font-weight: 800; letter-spacing: -0.02em; }
+
+.n1-detail { padding: 100px 0; }
+.n1-detail-inner {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 60px;
+}
+.n1-text h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.02em; margin: 12px 0 18px; line-height: 1.1; }
+.n1-text .spec-list { max-width: 360px; margin-bottom: 32px; }
+.n1-features { display: flex; flex-direction: column; gap: 28px; }
+.n1-feature { border-top: 1px solid var(--line); padding-top: 20px; }
+.n1-feature h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+.n1-feature p { color: var(--muted); font-size: 0.95rem; max-width: 56ch; }
+
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .nav { display: none; }
   .nav-toggle { display: flex; }
-  .hero-inner, .science-inner { grid-template-columns: 1fr; }
+  .hero-inner, .science-inner, .n1-detail-inner { grid-template-columns: 1fr; }
   .hero-visual { min-height: 320px; order: -1; }
   .product-grid { grid-template-columns: 1fr; }
   .science-visual { position: static; }
