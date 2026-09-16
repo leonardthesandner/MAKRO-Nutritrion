@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>makro. — Performance Nutrition, wissenschaftlich entwickelt</title>
-<link rel="stylesheet" href="styles.css?v=3">
+<meta name="description" content="makro. n°1 liefert 30g Carbs pro Sachet aus einer Maltodextrin-Isomaltulose-Fructose-Matrix (2:1 Carb-Mix) für gleichmäßige Energiefreisetzung ohne Blutzucker-Crash.">
+<link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
 
@@ -28,33 +29,59 @@
 
 <main>
 
-  <!-- VIDEO BANNER -->
-  <section class="video-banner">
+  <!-- BANNER -->
+  <section class="banner">
     <video src="assets/video/waves-bw.mp4" autoplay loop muted playsinline></video>
-    <a href="#produkte" class="video-banner-overlay">
+    <a href="#produkte" class="banner-overlay">
+      <span class="eyebrow">Performance Nutrition</span>
       <h2>makro.</h2>
     </a>
+    <span class="banner-scroll">Scroll</span>
   </section>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero grid-bg">
     <div class="container hero-inner">
-      <div class="hero-text">
+      <div class="hero-text" data-reveal>
         <span class="eyebrow">Entwickelt mit Sportwissenschaftlern</span>
         <h1>Energie, die auf Daten basiert — nicht auf Marketing.</h1>
-        <p class="lead">makro. n°1 liefert 30g Carbs pro Sachet aus einer Maltodextrin-Isomaltulose-Dextrose-Fructose-Matrix für gleichmäßige Energiefreisetzung ohne Blutzucker-Crash.</p>
+        <p class="lead">makro. n°1 liefert 30g Carbs pro Sachet aus einer Maltodextrin-Isomaltulose-Fructose-Matrix (2:1 Carb-Mix) für gleichmäßige Energiefreisetzung ohne Blutzucker-Crash.</p>
         <div class="hero-cta">
           <a href="#produkte" class="btn btn-primary">Produkte ansehen</a>
           <a href="#wissenschaft" class="btn btn-ghost">Studienlage prüfen</a>
         </div>
         <div class="hero-stats">
-          <div><strong>4</strong><span>Carb-Quellen</span></div>
-          <div><strong>30g</strong><span>Carbs / Sachet</span></div>
-          <div><strong>0</strong><span>Künstliche Süßstoffe</span></div>
+          <div><strong data-count="3">0</strong><span>Carb-Quellen</span></div>
+          <div><strong data-count="30g">0g</strong><span>Carbs / Sachet</span></div>
         </div>
       </div>
-      <div class="hero-visual">
-        <img src="assets/img/hero-bw-splash.png" alt="makro n°1 Sachet" class="product-shot" id="hero-product">
+
+      <div class="hero-visual" data-reveal>
+        <div class="data-panel">
+          <div class="data-panel-head">
+            <span class="product-no">n°1</span>
+            <span class="product-tag">Live Readout</span>
+          </div>
+          <div class="data-panel-chart">
+            <svg viewBox="0 0 360 140" class="chart" role="img" aria-label="Energiefreisetzung über Zeit">
+              <defs>
+                <linearGradient id="heroFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#d6443c" stop-opacity="0.35"/>
+                  <stop offset="100%" stop-color="#d6443c" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <line x1="0" y1="120" x2="360" y2="120" stroke="#f6f4ee" stroke-opacity="0.15"/>
+              <line x1="0" y1="80" x2="360" y2="80" stroke="#f6f4ee" stroke-opacity="0.08" stroke-dasharray="4 4"/>
+              <line x1="0" y1="40" x2="360" y2="40" stroke="#f6f4ee" stroke-opacity="0.08" stroke-dasharray="4 4"/>
+              <path d="M0,120 C50,120 70,40 120,44 C170,48 200,90 240,95 C280,100 320,88 360,70 L360,120 Z" fill="url(#heroFill)"/>
+              <path d="M0,120 C50,120 70,40 120,44 C170,48 200,90 240,95 C280,100 320,88 360,70" fill="none" stroke="#d6443c" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="data-panel-grid">
+            <div><strong data-count="30g">0g</strong><span>Carbs</span></div>
+            <div><strong data-count="3">0</strong><span>Quellen</span></div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -72,20 +99,21 @@
 
   <!-- PRODUKTE -->
   <section id="produkte" class="products">
+    <span class="section-tag">01 / Sortiment</span>
     <div class="container">
-      <div class="section-head">
+      <div class="section-head" data-reveal>
         <span class="eyebrow">Sortiment</span>
         <h2>Eine Formel, ein Prinzip: messbare Wirkung</h2>
         <p>Auf einen physiologischen Anwendungsfall ausgelegt — Energiezufuhr während der Belastung.</p>
       </div>
-      <div class="product-grid product-grid-single">
+      <div class="product-grid product-grid-single" data-reveal>
 
         <article class="product-card">
           <div class="product-swiper">
             <div class="product-swiper-track">
-              <img src="assets/img/product-1.png" alt="makro n°1 Sachet">
-              <img src="assets/img/product-2.png" alt="makro n°1 Box mit Sachets">
-              <img src="assets/img/product-3.png" alt="makro n°1 Sachet Rückseite mit Nährwerten">
+              <div class="swiper-slide"><img src="assets/img/n1-sachet.png" alt="makro n°1 Sachet"></div>
+              <div class="swiper-slide"><div class="visual-frame"><span class="visual-frame-tag">Box — Foto folgt</span></div></div>
+              <div class="swiper-slide"><img src="assets/img/n1-nutrition.png" alt="makro n°1 Zutaten und Nährwertangaben"></div>
             </div>
             <button class="swiper-arrow swiper-prev" aria-label="Vorheriges Bild">‹</button>
             <button class="swiper-arrow swiper-next" aria-label="Nächstes Bild">›</button>
@@ -100,7 +128,7 @@
             <span class="product-tag">Endurance</span>
           </div>
           <h3>Energy Gel</h3>
-          <p>30g Carbs (Maltodextrin, Isomaltulose, Dextrose, Fructose) für lang anhaltende, gleichmäßige Energie ohne Magenprobleme.</p>
+          <p>30g Carbs (Maltodextrin, Isomaltulose, Fructose — 2:1 Carb-Mix) für lang anhaltende, gleichmäßige Energie ohne Magenprobleme.</p>
           <ul class="spec-list">
             <li><span>Carbs</span><strong>30 g</strong></li>
             <li><span>Net Wt.</span><strong>60 g</strong></li>
@@ -113,21 +141,22 @@
   </section>
 
   <!-- WISSENSCHAFT -->
-  <section id="wissenschaft" class="science">
+  <section id="wissenschaft" class="section-dark">
+    <span class="section-tag">02 / Wissenschaft</span>
     <div class="container science-inner">
-      <div class="science-text">
+      <div class="science-text" data-reveal>
         <span class="eyebrow">Die Wissenschaft dahinter</span>
         <h2>Jede Dosierung ist literaturbasiert.</h2>
-        <p>Wir formulieren auf Basis peer-reviewter Studien zu Substratverwertung, Glykogen-Resynthese und Magen-Darm-Toleranz — keine proprietären "Geheimformeln".</p>
+        <p class="lead">Wir formulieren auf Basis peer-reviewter Studien zu Substratverwertung, Glykogen-Resynthese und Magen-Darm-Toleranz — keine proprietären "Geheimformeln".</p>
 
         <div class="accordion">
           <div class="accordion-item active">
             <button class="accordion-trigger">
-              <span>Maltodextrin, Isomaltulose, Dextrose &amp; Fructose</span>
+              <span>Maltodextrin, Isomaltulose &amp; Fructose — der 2:1 Carb-Mix</span>
               <span class="accordion-icon">+</span>
             </button>
             <div class="accordion-panel">
-              <p>Die Kombination aus schnell verfügbarem Maltodextrin, langsam hydrolysierter Isomaltulose (Glyk. Index ≈ 32), schnell verfügbarer Dextrose und über GLUT5 aufgenommener Fructose sorgt für eine breit gestaffelte Energiefreisetzung mit flacherer Blutzucker- und Insulinantwort.</p>
+              <p>30g Carbs pro Sachet aus 50% Maltodextrin, 33% Isomaltulose und 17% Fructose. Schnell verfügbares Maltodextrin liefert sofortige Energie, langsam hydrolysierte Isomaltulose (Glyk. Index ≈ 32) sorgt für eine flachere, anhaltende Blutzuckerkurve — ergänzt durch Fructose als zusätzliche, parallel verstoffwechselte Energiequelle.</p>
             </div>
           </div>
           <div class="accordion-item">
@@ -136,7 +165,16 @@
               <span class="accordion-icon">+</span>
             </button>
             <div class="accordion-panel">
-              <p>Die Kombination unterschiedlicher Kohlenhydrattransporter (SGLT1 &amp; GLUT5) erhöht die maximale Oxidationsrate exogener Kohlenhydrate und reduziert gastrointestinale Beschwerden bei hohen Zufuhrmengen.</p>
+              <p>Maltodextrin und Isomaltulose werden über SGLT1 aufgenommen, Fructose separat über GLUT5. Diese duale Aufnahme erhöht die maximale Oxidationsrate exogener Kohlenhydrate und reduziert gastrointestinale Beschwerden bei hohen Zufuhrmengen.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-trigger">
+              <span>Natrium &amp; Kalium</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-panel">
+              <p>Über Natriumcitrat und Kaliumchlorid liefert n°1 die zentralen Elektrolyte, die bei Schweißverlust während langer Belastung verloren gehen — für Flüssigkeitshaushalt und Muskelfunktion. Mit natürlichem Cola-Aroma.</p>
             </div>
           </div>
         </div>
@@ -147,60 +185,52 @@
         </div>
       </div>
 
-      <div class="science-visual">
-        <img src="assets/img/lab-flatlay.png" alt="makro n°1 im Labor-Setup" class="science-photo">
+      <div class="science-visual" data-reveal>
         <div class="chart-card">
           <h4>Blutzuckerverlauf nach Einnahme</h4>
           <svg viewBox="0 0 360 220" class="chart">
             <defs>
               <linearGradient id="fillRed" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#d6443c" stop-opacity="0.18"/>
+                <stop offset="0%" stop-color="#d6443c" stop-opacity="0.22"/>
                 <stop offset="100%" stop-color="#d6443c" stop-opacity="0"/>
               </linearGradient>
-              <linearGradient id="fillDark" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#111111" stop-opacity="0.12"/>
-                <stop offset="100%" stop-color="#111111" stop-opacity="0"/>
+              <linearGradient id="fillLight" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#f6f4ee" stop-opacity="0.14"/>
+                <stop offset="100%" stop-color="#f6f4ee" stop-opacity="0"/>
               </linearGradient>
             </defs>
 
-            <!-- horizontal grid -->
-            <line x1="40" y1="20" x2="40" y2="170" stroke="currentColor" stroke-opacity="0.15"/>
-            <line x1="40" y1="170" x2="340" y2="170" stroke="currentColor" stroke-opacity="0.15"/>
-            <line x1="40" y1="120" x2="340" y2="120" stroke="currentColor" stroke-opacity="0.08" stroke-dasharray="4 4"/>
-            <line x1="40" y1="70" x2="340" y2="70" stroke="currentColor" stroke-opacity="0.08" stroke-dasharray="4 4"/>
+            <line x1="40" y1="20" x2="40" y2="170" stroke="#f6f4ee" stroke-opacity="0.18"/>
+            <line x1="40" y1="170" x2="340" y2="170" stroke="#f6f4ee" stroke-opacity="0.18"/>
+            <line x1="40" y1="120" x2="340" y2="120" stroke="#f6f4ee" stroke-opacity="0.1" stroke-dasharray="4 4"/>
+            <line x1="40" y1="70" x2="340" y2="70" stroke="#f6f4ee" stroke-opacity="0.1" stroke-dasharray="4 4"/>
 
-            <!-- baseline -->
-            <line x1="40" y1="150" x2="340" y2="150" stroke="currentColor" stroke-opacity="0.25" stroke-dasharray="2 4"/>
+            <line x1="40" y1="150" x2="340" y2="150" stroke="#f6f4ee" stroke-opacity="0.28" stroke-dasharray="2 4"/>
 
-            <!-- area fills -->
             <path d="M40,150 C75,150 85,30 130,38 C160,44 185,100 205,150 C218,180 235,198 265,195 C295,192 320,182 340,172 L340,170 L40,170 Z" fill="url(#fillRed)"/>
-            <path d="M40,150 C70,150 100,90 140,82 C190,76 240,90 290,105 C315,112 330,117 340,121 L340,170 L40,170 Z" fill="url(#fillDark)"/>
+            <path d="M40,150 C70,150 100,90 140,82 C190,76 240,90 290,105 C315,112 330,117 340,121 L340,170 L40,170 Z" fill="url(#fillLight)"/>
 
-            <!-- lines -->
             <path d="M40,150 C75,150 85,30 130,38 C160,44 185,100 205,150 C218,180 235,198 265,195 C295,192 320,182 340,172" fill="none" stroke="#d6443c" stroke-width="3" stroke-linecap="round"/>
-            <path d="M40,150 C70,150 100,90 140,82 C190,76 240,90 290,105 C315,112 330,117 340,121" fill="none" stroke="#111111" stroke-width="3" stroke-linecap="round"/>
+            <path d="M40,150 C70,150 100,90 140,82 C190,76 240,90 290,105 C315,112 330,117 340,121" fill="none" stroke="#f6f4ee" stroke-width="3" stroke-linecap="round"/>
 
-            <!-- y axis labels -->
-            <text x="34" y="174" text-anchor="end" font-size="10" fill="currentColor" opacity="0.5">0</text>
-            <text x="34" y="124" text-anchor="end" font-size="10" fill="currentColor" opacity="0.5">+50%</text>
-            <text x="34" y="74" text-anchor="end" font-size="10" fill="currentColor" opacity="0.5">+100%</text>
+            <text x="34" y="174" text-anchor="end" font-size="10" fill="#9a9a9e">0</text>
+            <text x="34" y="124" text-anchor="end" font-size="10" fill="#9a9a9e">+50%</text>
+            <text x="34" y="74" text-anchor="end" font-size="10" fill="#9a9a9e">+100%</text>
 
-            <!-- x axis labels -->
-            <text x="40" y="195" font-size="10" fill="currentColor" opacity="0.5">0</text>
-            <text x="130" y="195" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.5">30 min</text>
-            <text x="240" y="195" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.5">60 min</text>
-            <text x="340" y="195" text-anchor="end" font-size="10" fill="currentColor" opacity="0.5">90 min</text>
-            <text x="190" y="213" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.4">Zeit nach Einnahme</text>
+            <text x="40" y="195" font-size="10" fill="#9a9a9e">0</text>
+            <text x="130" y="195" text-anchor="middle" font-size="10" fill="#9a9a9e">30 min</text>
+            <text x="240" y="195" text-anchor="middle" font-size="10" fill="#9a9a9e">60 min</text>
+            <text x="340" y="195" text-anchor="end" font-size="10" fill="#9a9a9e">90 min</text>
+            <text x="190" y="213" text-anchor="middle" font-size="10" fill="#9a9a9e" opacity="0.8">Zeit nach Einnahme</text>
           </svg>
           <div class="chart-legend">
             <span><i class="dot-red"></i> herkömmlicher Zucker</span>
-            <span><i class="dot-dark"></i> makro. n°1</span>
+            <span><i class="dot-light"></i> makro. n°1</span>
           </div>
         </div>
       </div>
     </div>
   </section>
-
 
 </main>
 
@@ -209,13 +239,13 @@
     <div class="logo">makro<span class="dot">.</span></div>
     <p>© 2026 MAKRO Nutrition. Alle Angaben ohne Gewähr. *Zertifizierung in Vorbereitung.</p>
     <div class="footer-links">
-      <a href="/impressum/">Impressum</a>
-      <a href="/agb/">AGB</a>
-      <a href="/datenschutz/">Datenschutz</a>
+      <a href="/impressum/" class="footer-link">Impressum</a>
+      <a href="/agb/" class="footer-link">AGB</a>
+      <a href="/datenschutz/" class="footer-link">Datenschutz</a>
     </div>
   </div>
 </footer>
 
-<script src="script.js?v=3"></script>
+<script src="script.js?v=5"></script>
 </body>
 </html>
