@@ -243,8 +243,8 @@ a.banner-overlay { cursor: pointer; }
 /* ==========================================================================
    Hero
    ========================================================================== */
-.hero { padding: 100px 0 70px; position: relative; }
-.hero-inner { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 64px; align-items: center; }
+.hero { padding: 70px 0 70px; position: relative; }
+.hero-text { max-width: 720px; }
 .hero-text h1 { font-size: clamp(2.5rem, 4.6vw, 3.8rem); margin-bottom: 24px; }
 .lead { font-size: 1.12rem; color: var(--ink-soft); max-width: 50ch; margin-bottom: 34px; }
 .hero-cta { display: flex; gap: 14px; margin-bottom: 52px; flex-wrap: wrap; }
@@ -253,12 +253,15 @@ a.banner-overlay { cursor: pointer; }
 .hero-stats strong { font-family: var(--display); font-size: 1.7rem; font-weight: 700; }
 .hero-stats span { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.04em; color: var(--ink-soft); }
 
-/* hero buy panel — lets visitors purchase directly from the hero */
+/* hero buy panel — lets visitors purchase directly under the banner */
+.hero-buy-section { padding: 64px 0 0; }
 .hero-buy {
   background: var(--dark-bg);
   color: var(--dark-ink);
   border-radius: var(--radius-lg);
   padding: 28px;
+  max-width: 480px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -502,7 +505,7 @@ a.banner-overlay { cursor: pointer; }
 @media (max-width: 980px) {
   .nav { display: none; }
   .nav-toggle { display: flex; }
-  .hero-inner, .science-inner, .n1-detail-inner { grid-template-columns: 1fr; }
+  .science-inner, .n1-detail-inner { grid-template-columns: 1fr; }
   .product-grid { grid-template-columns: 1fr; }
   .n1-features { grid-template-columns: 1fr; }
   .pricing-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
@@ -514,7 +517,7 @@ a.banner-overlay { cursor: pointer; }
   .header-inner .btn { display: none; }
 
   .hero { padding: 36px 0 44px; }
-  .hero-inner { gap: 28px; }
+  .hero-buy-section { padding: 36px 0 0; }
   .hero-buy { padding: 22px; }
   .lead { font-size: 1rem; max-width: none; margin-bottom: 26px; }
   .hero-cta { flex-direction: column; gap: 10px; margin-bottom: 34px; }
