@@ -22,18 +22,30 @@
   var options = {
     product: {
       styles: {
-        product: { '@media (min-width: 601px)': { 'max-width': '100%', 'margin-left': '0', 'margin-bottom': '0' } },
+        product: {
+          'text-align': 'center',
+          '@media (min-width: 601px)': { 'max-width': '100%', 'margin-left': '0', 'margin-bottom': '0' },
+        },
+        title: { 'text-align': 'center' },
+        price: { 'text-align': 'center' },
+        description: { 'text-align': 'center' },
         button: buttonStyle,
-        quantityInput: { 'font-family': FONT, 'font-size': '0.92rem', 'padding-top': '12px', 'padding-bottom': '12px' },
+        quantityInput: { 'font-family': FONT, 'font-size': '0.92rem', 'padding-top': '12px', 'padding-bottom': '12px', margin: '0 auto' },
       },
       text: { button: 'In den Warenkorb' },
     },
     modalProduct: {
       contents: { img: false, imgWithCarousel: true, button: false, buttonWithQuantity: true },
       styles: {
-        product: { '@media (min-width: 601px)': { 'max-width': '100%', 'margin-left': '0', 'margin-bottom': '0' } },
+        product: {
+          'text-align': 'center',
+          '@media (min-width: 601px)': { 'max-width': '100%', 'margin-left': '0', 'margin-bottom': '0' },
+        },
+        title: { 'text-align': 'center' },
+        price: { 'text-align': 'center' },
+        description: { 'text-align': 'center' },
         button: buttonStyle,
-        quantityInput: { 'font-family': FONT, 'font-size': '0.92rem', 'padding-top': '12px', 'padding-bottom': '12px' },
+        quantityInput: { 'font-family': FONT, 'font-size': '0.92rem', 'padding-top': '12px', 'padding-bottom': '12px', margin: '0 auto' },
       },
       text: { button: 'In den Warenkorb' },
     },

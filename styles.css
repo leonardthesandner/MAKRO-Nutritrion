@@ -284,14 +284,14 @@ a.banner-overlay { cursor: pointer; }
 }
 .hero-buy-list { position: relative; display: flex; flex-direction: column; align-items: stretch; gap: 16px; }
 .hero-buy-item {
-  border: 1px solid rgba(246,244,238,0.5);
+  border: 1px solid transparent;
   border-radius: var(--radius-sm);
-  background: var(--dark-card);
+  background: #ffffff;
   padding: 6px;
   overflow: hidden;
-  transition: border-color 0.15s var(--ease);
+  transition: box-shadow 0.15s var(--ease);
 }
-.hero-buy-item:hover { border-color: rgba(246,244,238,0.85); }
+.hero-buy-item:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.18); }
 
 /* ==========================================================================
    Trust bar
