@@ -45,14 +45,6 @@ img, video { max-width: 100%; display: block; }
 
 ::selection { background: var(--accent); color: #fff; }
 
-/* background grid texture, used behind light sections */
-.grid-bg {
-  background-image:
-    linear-gradient(var(--line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size: 64px 64px;
-  background-position: center top;
-}
 
 /* ==========================================================================
    Type
@@ -234,14 +226,6 @@ a.banner-overlay { cursor: pointer; }
   position: relative;
   overflow: hidden;
 }
-.n1-banner::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(var(--dark-line) 1px, transparent 1px), linear-gradient(90deg, var(--dark-line) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: radial-gradient(ellipse at center, black 0%, transparent 75%);
-}
 .n1-banner-inner { position: relative; z-index: 1; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px; }
 .n1-banner-num {
   font-family: var(--display);
@@ -280,14 +264,6 @@ a.banner-overlay { cursor: pointer; }
   gap: 20px;
   position: relative;
   overflow: hidden;
-}
-.hero-buy::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(var(--dark-line) 1px, transparent 1px), linear-gradient(90deg, var(--dark-line) 1px, transparent 1px);
-  background-size: 40px 40px;
-  opacity: 0.6;
 }
 .hero-buy-head { position: relative; display: flex; justify-content: space-between; align-items: flex-start; }
 .hero-buy-head .product-no { font-family: var(--display); font-size: 2rem; font-weight: 700; }
