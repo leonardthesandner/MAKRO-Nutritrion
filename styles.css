@@ -525,7 +525,7 @@ a.banner-overlay { cursor: pointer; }
   .hero-stats { gap: 20px; }
   .hero-stats strong { font-size: 1.35rem; }
 
-  .banner { height: 56vh; min-height: 360px; }
+  .banner { height: calc(100vh - 66px); height: calc(100dvh - 66px); min-height: 420px; }
   .banner-overlay h2 { padding: 0 16px; }
   .n1-banner { height: 48vh; min-height: 320px; }
   .n1-banner-num { font-size: clamp(4.5rem, 26vw, 7rem); }
