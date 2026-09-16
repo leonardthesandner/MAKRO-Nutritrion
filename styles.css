@@ -277,7 +277,7 @@ a.banner-overlay { cursor: pointer; }
   border-radius: 999px;
   color: var(--dark-ink-soft);
 }
-.hero-buy-list { position: relative; display: flex; flex-direction: column; gap: 14px; }
+.hero-buy-list { position: relative; display: flex; flex-direction: column; align-items: center; gap: 14px; }
 
 /* ==========================================================================
    Trust bar
