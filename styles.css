@@ -269,20 +269,19 @@ a.banner-overlay { cursor: pointer; }
 .hero-stats strong { font-family: var(--display); font-size: 1.7rem; font-weight: 700; }
 .hero-stats span { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.04em; color: var(--ink-soft); }
 
-/* generated data-visual used in place of hero photography */
-.data-panel {
+/* hero buy panel — lets visitors purchase directly from the hero */
+.hero-buy {
   background: var(--dark-bg);
   color: var(--dark-ink);
   border-radius: var(--radius-lg);
-  padding: 32px;
-  min-height: 480px;
+  padding: 28px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
   position: relative;
   overflow: hidden;
 }
-.data-panel::before {
+.hero-buy::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -290,9 +289,9 @@ a.banner-overlay { cursor: pointer; }
   background-size: 40px 40px;
   opacity: 0.6;
 }
-.data-panel-head { position: relative; display: flex; justify-content: space-between; align-items: flex-start; }
-.data-panel-head .product-no { font-family: var(--display); font-size: 2rem; font-weight: 700; }
-.data-panel-head .product-tag {
+.hero-buy-head { position: relative; display: flex; justify-content: space-between; align-items: flex-start; }
+.hero-buy-head .product-no { font-family: var(--display); font-size: 2rem; font-weight: 700; }
+.hero-buy-head .product-tag {
   font-family: var(--mono);
   font-size: 0.68rem;
   letter-spacing: 0.08em;
@@ -302,12 +301,7 @@ a.banner-overlay { cursor: pointer; }
   border-radius: 999px;
   color: var(--dark-ink-soft);
 }
-.data-panel-chart { position: relative; flex: 1; display: flex; align-items: flex-end; }
-.data-panel-chart svg { width: 100%; height: auto; }
-.data-panel-grid { position: relative; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--dark-line); border: 1px solid var(--dark-line); border-radius: var(--radius-sm); overflow: hidden; }
-.data-panel-grid div { background: var(--dark-card); padding: 16px 14px; display: flex; flex-direction: column; gap: 6px; }
-.data-panel-grid strong { font-family: var(--display); font-size: 1.35rem; font-weight: 700; }
-.data-panel-grid span { font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.04em; color: var(--dark-ink-soft); text-transform: uppercase; }
+.hero-buy-list { position: relative; display: flex; flex-direction: column; gap: 14px; }
 
 /* ==========================================================================
    Trust bar
@@ -533,7 +527,6 @@ a.banner-overlay { cursor: pointer; }
   .nav { display: none; }
   .nav-toggle { display: flex; }
   .hero-inner, .science-inner, .n1-detail-inner { grid-template-columns: 1fr; }
-  .data-panel { min-height: 340px; order: -1; }
   .product-grid { grid-template-columns: 1fr; }
   .n1-features { grid-template-columns: 1fr; }
   .pricing-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
@@ -546,7 +539,7 @@ a.banner-overlay { cursor: pointer; }
 
   .hero { padding: 36px 0 44px; }
   .hero-inner { gap: 28px; }
-  .data-panel { min-height: 260px; padding: 24px; }
+  .hero-buy { padding: 22px; }
   .lead { font-size: 1rem; max-width: none; margin-bottom: 26px; }
   .hero-cta { flex-direction: column; gap: 10px; margin-bottom: 34px; }
   .hero-cta .btn { width: 100%; }
