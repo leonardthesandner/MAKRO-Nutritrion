@@ -460,6 +460,44 @@ a.banner-overlay { cursor: pointer; }
 .n1-feature p { color: var(--ink-soft); font-size: 0.92rem; }
 
 /* ==========================================================================
+   Pricing / buy
+   ========================================================================== */
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.pricing-card {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-line);
+  border-radius: var(--radius);
+  padding: 36px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+.pricing-card-featured { border-color: var(--accent); }
+.pricing-card-featured::before {
+  content: "Beliebt";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.pricing-label { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--dark-ink-soft); margin-bottom: 8px; }
+.pricing-price { font-family: var(--display); font-size: 2.1rem; font-weight: 800; line-height: 1.1; }
+.pricing-sub { font-family: var(--mono); font-size: 0.75rem; color: var(--dark-ink-soft); margin: 6px 0 20px; }
+.pricing-buy { width: 100%; display: flex; justify-content: center; }
+
+/* ==========================================================================
    Legal pages
    ========================================================================== */
 .legal { padding: 100px 0 120px; }
@@ -498,6 +536,7 @@ a.banner-overlay { cursor: pointer; }
   .data-panel { min-height: 340px; order: -1; }
   .product-grid { grid-template-columns: 1fr; }
   .n1-features { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
 }
 
 @media (max-width: 640px) {

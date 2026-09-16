@@ -6,6 +6,7 @@
 <title>n°1 Energy Gel — makro.</title>
 <meta name="description" content="makro. n°1 ist unser Energy Gel für Ausdauerbelastung: 30g Carbs pro Sachet aus einer Maltodextrin-Isomaltulose-Fructose-Matrix (2:1 Carb-Mix).">
 <link rel="stylesheet" href="../styles.css?v=5">
+<script async src="https://js.stripe.com/v3/buy-button.js"></script>
 </head>
 <body>
 
@@ -53,7 +54,7 @@
           <li><span>Carb-Quellen</span><strong>3</strong></li>
         </ul>
 
-        <a href="#" class="btn btn-primary">Coming Soon</a>
+        <a href="#kaufen" class="btn btn-primary">Jetzt kaufen</a>
       </div>
 
       <div class="n1-features" data-reveal>
@@ -77,6 +78,56 @@
           <h3>Einfach in der Anwendung</h3>
           <p>Ein Sachet (60g) liefert 30g Carbs. Ideal etwa 15–20 Minuten vor oder während intensiver Belastung, mit ausreichend Flüssigkeit.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KAUFEN -->
+  <section id="kaufen" class="section-dark">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">Kaufen</span>
+        <h2>Wähle deine Packungsgröße</h2>
+        <p>Versand nur nach Deutschland und Österreich.</p>
+      </div>
+      <div class="pricing-grid" data-reveal>
+
+        <article class="pricing-card">
+          <span class="pricing-label">Einzeln</span>
+          <strong class="pricing-price">2,49&nbsp;€</strong>
+          <span class="pricing-sub">1 Gel</span>
+          <div class="pricing-buy">
+            <stripe-buy-button
+              buy-button-id="buy_btn_1UGKwe3nhn45OwvcLY2L8kbY"
+              publishable-key="pk_test_51TOzzO3nhn45OwvcoBkGOFPm3Ln6Fa3McS9PHOE1w1RwsV55KYKzazlDlDtNStNyTewo7v61uXwGZDVKCu10ojCl00f3Dhku9r"
+            ></stripe-buy-button>
+          </div>
+        </article>
+
+        <article class="pricing-card pricing-card-featured">
+          <span class="pricing-label">12er-Pack</span>
+          <strong class="pricing-price">24,99&nbsp;€</strong>
+          <span class="pricing-sub">12 Gele</span>
+          <div class="pricing-buy">
+            <stripe-buy-button
+              buy-button-id="buy_btn_1UGKyk3nhn45Owvc9FM6jkH1"
+              publishable-key="pk_test_51TOzzO3nhn45OwvcoBkGOFPm3Ln6Fa3McS9PHOE1w1RwsV55KYKzazlDlDtNStNyTewo7v61uXwGZDVKCu10ojCl00f3Dhku9r"
+            ></stripe-buy-button>
+          </div>
+        </article>
+
+        <article class="pricing-card">
+          <span class="pricing-label">3× 12er-Pack</span>
+          <strong class="pricing-price">64,99&nbsp;€</strong>
+          <span class="pricing-sub">36 Gele</span>
+          <div class="pricing-buy">
+            <stripe-buy-button
+              buy-button-id="buy_btn_1UGKzX3nhn45OwvciAjD03Uu"
+              publishable-key="pk_test_51TOzzO3nhn45OwvcoBkGOFPm3Ln6Fa3McS9PHOE1w1RwsV55KYKzazlDlDtNStNyTewo7v61uXwGZDVKCu10ojCl00f3Dhku9r"
+            ></stripe-buy-button>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
