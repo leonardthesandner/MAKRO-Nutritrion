@@ -56,6 +56,18 @@ document.querySelectorAll('.product-swiper').forEach(swiper => {
   }, { passive: true });
 });
 
+/* Buy picker — one photo, switch the active pack size */
+document.querySelectorAll('.buy-picker').forEach(picker => {
+  const tabs = picker.querySelectorAll('.buy-tab');
+  const widgets = picker.querySelectorAll('.buy-widget');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.toggle('is-active', t === tab));
+      widgets.forEach(w => w.classList.toggle('is-active', w.id === tab.dataset.target));
+    });
+  });
+});
+
 /* Scroll reveal */
 const revealItems = document.querySelectorAll('[data-reveal]');
 if (revealItems.length && 'IntersectionObserver' in window) {

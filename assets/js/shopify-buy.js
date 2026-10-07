@@ -21,9 +21,11 @@
 
   var options = {
     product: {
+      contents: { img: false, title: true, price: true, button: true },
       styles: {
         product: {
           'text-align': 'center',
+          'padding-top': '0',
           '@media (min-width: 601px)': { 'max-width': '100%', 'margin-left': '0', 'margin-bottom': '0' },
         },
         title: { 'text-align': 'center' },
